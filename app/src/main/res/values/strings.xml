@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Shape-It-Final</string>
+    <string name="welcomeMessage">Welcome to Shape It! To begin, press the \'Begin Game\' button. This will take                         you to the game where you will see a shape. To play, tap the shape.  You will                         see the name of the shape appear, along with hear the name said. A new shape will                         then appear.  Repeat until your child has learned all of the shapes!</string>
 </resources>
