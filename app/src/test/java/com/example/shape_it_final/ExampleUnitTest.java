@@ -14,4 +14,14 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void soundFile_notNull() { assertNotNull("Game Item is NULL", GameItemTriangle);}
+
+    @Test
+    public void imageFile_notNull() { assertNotNull("Image is NULL",GameItemImage);}
+
+    @Test
+    public void showsName_isTrue() { assertTrue("Name is true", showsName());}
+
 }
