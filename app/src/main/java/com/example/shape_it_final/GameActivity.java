@@ -2,8 +2,11 @@ package com.example.shape_it_final;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.OnLifecycleEvent;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -15,11 +18,15 @@ import android.widget.ImageView;
 public class GameActivity extends AppCompatActivity {
 
     //ConstraintLayout constraintLayout;
+    int currentShape;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        currentShape = pref.getInt("currentShape", 0);
 
 /**
         constraintLayout = new ConstraintLayout(this);
@@ -79,5 +86,15 @@ public class GameActivity extends AppCompatActivity {
         };
 
     }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    public void saveCurrentShape() {
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt("currentShape", currentShape);
+        editor.commit();
+    }
+
+
 }
 
