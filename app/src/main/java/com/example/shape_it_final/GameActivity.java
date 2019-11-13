@@ -12,86 +12,74 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
 
-    //ConstraintLayout constraintLayout;
-    int currentShape;
+    //Holds our current shape ID
+    int currentShapeID;
 
+    //not in use yet
+    //just a starter shape to begin our game
+    Shape currentShape = new Shape(); //needs to be turned into non default constructor
+
+    //not in use yet
+    //just goofing off to get stuff done
+    String triangle = "Triangle";
+
+    //Global declarations to manipulate textView and imageButton
+    TextView shapeName;
+    ImageButton shapeButton;
+
+
+
+    //This begins our gameActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        //saves the state of our game and shape by recording the ID of the current shape
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-        currentShape = pref.getInt("currentShape", 0);
-
-/**
-        constraintLayout = new ConstraintLayout(this);
-
-        ImageView i = new ImageView(this);
-        i.setImageResource(R.drawable.triangle);
-
-        i.setAdjustViewBounds(true);
-        i.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
-
-        constraintLayout.addView(i);
-        setContentView(constraintLayout);
-
-****/
-/**
-        Resources res = context.getResources();
-        Drawable myImage = ResouresCompat.getDrawables(res, R.drawable.triangle, null);
-**/
-/**
-        Drawable replacer = getResources().getDrawable(R.drawable.triangle);
-        ((R.id.imageButton).setImageResources(replacer);
-**/
+        currentShapeID = pref.getInt("currentShape", 0);
 
         //sets the imageButton to our triangle file
-        ImageButton simpleImageButton = findViewById(R.id.imageButton);
-        simpleImageButton.setImageResource(R.drawable.triangle);
+        shapeButton = findViewById(R.id.imageButton);
+        shapeButton.setImageResource(R.drawable.triangle);
 
-/**
-        //simply formats our image to match the button size
-        simpleImageButton.setAdjustViewBounds(true);
-        simpleImageButton.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT));
-**/
+        //to update the textview and adds onclick event
+        shapeName = findViewById(R.id.textView);
+        shapeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                //simply sets textview to triangle for now
+                String triangle = "Triangle";
+                shapeName.setText(triangle);
+            }
+
+        });
+
+
+
     }
 
     //attached to imageButton in activity_game.xml and is called if touched
-    public void buttonTouched() {
+    public void buttonTouched(View v) {
 
-        GameItem gameItem = new GameItem() {
-            @Override
-            public void draw() {
-
-            }
-
-            @Override
-            public void showsName() {
-
-            }
-
-            @Override
-            public void saysName() {
-
-            }
-        };
-
+        //to update the textview
+        //TextView textView = findViewById(R.id.textView);
+        //textView.setText("Triangle");
     }
 
+    //if our game is paused, this will save our ShapeID so we know our current state
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     public void saveCurrentShape() {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putInt("currentShape", currentShape);
+        editor.putInt("currentShape", currentShapeID);
         editor.commit();
     }
 
