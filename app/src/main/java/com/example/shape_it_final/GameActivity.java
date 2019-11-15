@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -58,6 +59,20 @@ public class GameActivity extends AppCompatActivity {
                 //simply sets textview to triangle for now
                 String triangle = "Triangle";
                 shapeName.setText(triangle);
+
+                //the idea here is to start a second thread to pause and then update our imageButton
+                //might still need work... it works, just not sure if done properly
+                Runnable r = new Runnable() {
+                    @Override
+                    public void run(){
+                        shapeButton.setImageResource(R.drawable.triangle_name);
+                        shapeName.setText("");
+                    }
+                };
+
+                Handler h = new Handler();
+                h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
+
             }
 
         });

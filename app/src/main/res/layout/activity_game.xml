@@ -22,7 +22,6 @@
         android:id="@+id/textView"
         android:layout_width="150dp"
         android:layout_height="47dp"
-        android:text="Shape Name"
         app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
