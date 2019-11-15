@@ -5,6 +5,12 @@ import android.widget.TextView;
 
 public class Shape implements GameItem {
 
+    @Override
+    public void draw() {
+
+    }
+
+    /***
     public enum Shape implements GameItem {
         Triangle;
     }
@@ -18,7 +24,7 @@ public class Shape implements GameItem {
                 }
             },
 
-
+***/
     @Override
     public void showsName() {
 

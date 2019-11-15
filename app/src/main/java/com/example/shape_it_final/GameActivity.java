@@ -13,12 +13,13 @@ import androidx.lifecycle.OnLifecycleEvent;
 
 public class GameActivity extends AppCompatActivity {
 
+    //not in use yet
     //Holds our current shape ID
     int currentShapeID; //=1 (For triangle)
 
     //not in use yet
     //just a starter shape to begin our game
-    Shape currentShape = new Shape(currentShapeID); //needs to be turned into non default constructor
+    //Shape currentShape = new Shape(currentShapeID); //needs to be turned into non default constructor
 
     //not in use yet
     //just goofing off to get stuff done
@@ -27,7 +28,6 @@ public class GameActivity extends AppCompatActivity {
     //Global declarations to manipulate textView and imageButton
     TextView shapeName;
     ImageButton shapeButton;
-
 
 
     //This begins our gameActivity
@@ -52,6 +52,8 @@ public class GameActivity extends AppCompatActivity {
                 //simply sets textview to triangle for now
                 String triangle = "Triangle";
                 shapeName.setText(triangle);
+                android.media.MediaPlayer mediaPlayer= android.media.MediaPlayer.create(GameActivity.this,R.raw.triangle_audio);
+                mediaPlayer.start();
 
                 //the idea here is to start a second thread to pause and then update our imageButton
                 //might still need work... it works, just not sure if done properly
@@ -65,10 +67,7 @@ public class GameActivity extends AppCompatActivity {
 
                 Handler h = new Handler();
                 h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
-                android.media.MediaPlayer mediaPlayer= android.media.MediaPlayer.create(GameActivity.this,R.raw.triangle_audio);
-                mediaPlayer.start();
             }
-
         });
 
 
