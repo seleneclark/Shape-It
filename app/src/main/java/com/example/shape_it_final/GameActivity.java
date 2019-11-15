@@ -1,31 +1,24 @@
 package com.example.shape_it_final;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.OnLifecycleEvent;
-
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.OnLifecycleEvent;
 
 public class GameActivity extends AppCompatActivity {
 
     //Holds our current shape ID
-    int currentShapeID;
+    int currentShapeID; //=1 (For triangle)
 
     //not in use yet
     //just a starter shape to begin our game
-    Shape currentShape = new Shape(); //needs to be turned into non default constructor
+    Shape currentShape = new Shape(currentShapeID); //needs to be turned into non default constructor
 
     //not in use yet
     //just goofing off to get stuff done
@@ -72,7 +65,8 @@ public class GameActivity extends AppCompatActivity {
 
                 Handler h = new Handler();
                 h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
-
+                android.media.MediaPlayer mediaPlayer= android.media.MediaPlayer.create(GameActivity.this,R.raw.triangle_audio);
+                mediaPlayer.start();
             }
 
         });
