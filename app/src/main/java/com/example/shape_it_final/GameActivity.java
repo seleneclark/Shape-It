@@ -28,6 +28,7 @@ public class GameActivity extends AppCompatActivity {
     //Global declarations to manipulate textView and imageButton
     TextView shapeName;
     ImageButton shapeButton;
+    //String test = "triangle_name";
 
 
     //This begins our gameActivity
@@ -50,8 +51,11 @@ public class GameActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //simply sets textview to triangle for now
+                //1
                 String triangle = "Triangle";
                 shapeName.setText(triangle);
+
+                //2
                 android.media.MediaPlayer mediaPlayer= android.media.MediaPlayer.create(GameActivity.this,R.raw.triangle_audio);
                 mediaPlayer.start();
 
@@ -60,16 +64,17 @@ public class GameActivity extends AppCompatActivity {
                 Runnable r = new Runnable() {
                     @Override
                     public void run(){
+                        //4
                         shapeButton.setImageResource(R.drawable.triangle_name);
                         shapeName.setText("");
                     }
                 };
 
+                //3
                 Handler h = new Handler();
                 h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
             }
         });
-
 
 
     }

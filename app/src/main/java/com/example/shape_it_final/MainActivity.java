@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         //set up an intent to move to GameActivity
         Intent startGameIntent = new Intent(this, GameActivity.class);
         startActivity(startGameIntent);
+
+        //Logging information
+        Log.i(TAG, "Started GameActivity");
 
     }
 
