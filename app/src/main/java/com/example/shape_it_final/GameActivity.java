@@ -1,5 +1,6 @@
 package com.example.shape_it_final;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,18 +18,20 @@ public class GameActivity extends AppCompatActivity {
     //Holds our current shape ID
     int currentShapeID; //=1 (For triangle)
 
-    //not in use yet
+
     //just a starter shape to begin our game
     //Shape currentShape = new Shape(currentShapeID); //needs to be turned into non default constructor
+    Triangle triangle;
 
-    //not in use yet
-    //just goofing off to get stuff done
-    String triangle = "Triangle";
+    //just goofing off to get
+    String triangleWord = "Triangle";
 
     //Global declarations to manipulate textView and imageButton
     TextView shapeName;
     ImageButton shapeButton;
-    //String test = "triangle_name";
+
+    //this is for testing data from an intent, not in use
+    //Intent gameIntent = new Intent(this, GameActivity.class);
 
 
     //This begins our gameActivity
@@ -45,6 +48,11 @@ public class GameActivity extends AppCompatActivity {
         shapeButton = findViewById(R.id.imageButton);
         shapeButton.setImageResource(R.drawable.triangle);
 
+        //calls the triangle draw function to set our image
+        //crashes program
+        //triangle.draw(shapeButton);
+
+
         //to update the textview and adds onclick event
         shapeName = findViewById(R.id.textView);
         shapeButton.setOnClickListener(new View.OnClickListener() {
@@ -52,12 +60,15 @@ public class GameActivity extends AppCompatActivity {
 
                 //simply sets textview to triangle for now
                 //1
-                String triangle = "Triangle";
-                shapeName.setText(triangle);
+                shapeName.setText(triangleWord);
+                //this crashes for some reason
+                //triangle.showsName(shapeName);
 
                 //2
                 android.media.MediaPlayer mediaPlayer= android.media.MediaPlayer.create(GameActivity.this,R.raw.triangle_audio);
                 mediaPlayer.start();
+                //not working yet
+                //triangle.saysName();
 
                 //the idea here is to start a second thread to pause and then update our imageButton
                 //might still need work... it works, just not sure if done properly

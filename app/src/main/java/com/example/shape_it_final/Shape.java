@@ -1,12 +1,13 @@
 package com.example.shape_it_final;
 
+import android.content.Intent;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Shape implements GameItem {
 
     @Override
-    public void draw() {
+    public void draw(ImageButton b) {
 
     }
 
@@ -26,7 +27,7 @@ public class Shape implements GameItem {
 
 ***/
     @Override
-    public void showsName() {
+    public void showsName(TextView v) {
 
     }
 

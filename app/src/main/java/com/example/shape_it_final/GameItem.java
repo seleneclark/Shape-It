@@ -1,5 +1,9 @@
 package com.example.shape_it_final;
 
+import android.content.Intent;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
 /**
  * GameItem interface
  * A GameItem is an item that will appear in the GameActivity
@@ -14,7 +18,7 @@ package com.example.shape_it_final;
 
 public interface GameItem {
 
-    void draw();
-    void showsName();
+    void draw(ImageButton b);
+    void showsName(TextView v);
     void saysName();
 }
