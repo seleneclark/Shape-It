@@ -1,17 +1,28 @@
 package com.example.shape_it_final;
 
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
+import android.os.Handler;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.IOException;
-
 //had to extend gameActivity in order for the context of mediaplayer, not sure if good idea
 public class Triangle implements GameItem {
+
+    Triangle(ImageButton shapeButton) {
+        
+        shapeButton.setImageResource(R.drawable.triangle);
+        shapeName = findViewById(R.id.textView);
+        shapeButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            shapeName.setText(triangleWord);
+            android.media.MediaPlayer mediaPlayer= android.media.MediaPlayer.create(GameActivity.this,R.raw.triangle_audio);
+            mediaPlayer.start();
+            Handler h = new Handler();
+            h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
+            }
+        });
+
+    }
 
 
 
