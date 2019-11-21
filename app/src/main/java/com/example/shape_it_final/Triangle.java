@@ -45,7 +45,7 @@ public class Triangle implements GameItem {
     @Override
     public void showsName() {
         triangleName.setText("Triangle");
-        triangleButton.setImageResource(R.drawable.triangle_name);
+        //triangleButton.setImageResource(R.drawable.triangle_name);
         Log.i(TAG, "Drew a Triangle with the name");
     }
 

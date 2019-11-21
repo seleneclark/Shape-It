@@ -15,32 +15,29 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.OnLifecycleEvent;
 
 public class GameActivity extends AppCompatActivity {
+
+    //for logging and debugging
     String TAG = "SHAPEIT GameActivity";
 
-    //not in use yet
     //Holds our current shape ID
-    int currentShapeID; //=1 (For triangle)
-
-
-    //just a starter shape to begin our game
-    //Shape currentShape = new Shape(currentShapeID); //needs to be turned into non default constructor
-//    Triangle triangle;
-
-    //just goofing off to get
-//    String triangleWord = "Triangle";
+    int currentShapeID = 0; // = 0 (For triangle)
 
     //Global declarations to manipulate textView and imageButton
     TextView shapeName;
     ImageButton shapeButton;
 
-    //this is for testing data from an intent, not in use
-    //Intent gameIntent = new Intent(this, GameActivity.class);
+    //Global declarations to manipulate gameItem and shapeFactory
+    GameItem gameItem;
+    ShapeFactory shapeFactory = new ShapeFactory();
 
 
     //This begins our gameActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //just logging for debugging
         Log.i(TAG, "Started GameActivity");
+
+        //getting started
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
@@ -52,25 +49,55 @@ public class GameActivity extends AppCompatActivity {
         shapeButton = findViewById(R.id.imageButton);
         shapeName = findViewById(R.id.textView);
 
-        //Here we create a triangle
+        //logging for debugging
         Log.i(TAG, "Instantiate a Triangle");
-        final Triangle triangle = new Triangle(shapeButton, shapeName);
-        triangle.draw();
+        //Create our game item using our factory method based upon shapeID
+        gameItem = shapeFactory.getShape(shapeButton, shapeName, currentShapeID);
+        gameItem.draw();
 
+        //This listens for a click on our shape
         shapeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                triangle.showsName();
-                triangle.saysName(getApplicationContext());
+
+                //shows the name above the shape image and starts the sound file
+                //1
+                gameItem.showsName();
+                //2
+                gameItem.saysName(getApplicationContext());
+
+                //begins a pause to allow for sound to play before updating shape
+                Runnable r = new Runnable() {
+                    @Override
+                    public void run(){
+                        //4
+                        //this counts our clicks on our button
+                        if(currentShapeID >= 2)//<--- this number needs changed based on number of shapes
+                            currentShapeID++;
+                        else if(currentShapeID == 2)//<----this number also needs changed based on number of shapes
+                            currentShapeID = 0;
+
+                        //this will set our next shape and draw it
+                        gameItem = shapeFactory.getShape(shapeButton, shapeName, currentShapeID);
+                        gameItem.draw();
+
+
+                    }
+                };
+
+                //helps handled the delay
+                //3
+                Handler h = new Handler();
+                h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
             }
         });
 
+
+        //save this commented code in case we need to pull from it
 
 //        //to update the textview and adds onclick event
 //        shapeName = findViewById(R.id.textView);
 //        shapeButton.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View v) {
-
-
 
 //                //simply sets textview to triangle for now
 //                //1
@@ -102,14 +129,6 @@ public class GameActivity extends AppCompatActivity {
 //        });
 
 
-    }
-
-    //attached to imageButton in activity_game.xml and is called if touched
-    public void buttonTouched(View v) {
-
-        //to update the textview
-        //TextView textView = findViewById(R.id.textView);
-        //textView.setText("Triangle");
     }
 
     //if our game is paused, this will save our ShapeID so we know our current state
