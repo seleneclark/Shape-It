@@ -1,5 +1,6 @@
 package com.example.shape_it_final;
 
+import android.content.Context;
 import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -8,11 +9,11 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-//had to extend gameActivity in order for the context of mediaplayer, not sure if good idea
+import java.lang.ref.WeakReference;
+
 public class Triangle implements GameItem {
 
     private String TAG = "SHAPEIT Triangle";
-
     private ImageButton triangleButton;
     private TextView triangleName;
 
@@ -20,8 +21,6 @@ public class Triangle implements GameItem {
         Log.i(TAG, "Started Triangle class");
         triangleButton = shapeButton;
         triangleName = shapeName;
-
-
 
 //        shapeButton = findViewById(R.id.imageButton);
 //        shapeName = findViewById(R.id.textView);
@@ -37,40 +36,25 @@ public class Triangle implements GameItem {
 
     }
 
-
     @Override
     public void draw() {
         triangleButton.setImageResource(R.drawable.triangle);
         Log.i(TAG, "Drew a Triangle");
     }
 
-    //passes the textview to be updated from Gameactivity
-    //this seems to crash the program...
     @Override
     public void showsName() {
         triangleName.setText("Triangle");
         triangleButton.setImageResource(R.drawable.triangle_name);
-
+        Log.i(TAG, "Drew a Triangle with the name");
     }
 
     //plays the sound of a given shape, finding the context was difficult, not sure if right
     @Override
-    public void saysName() {
+    public void saysName(Context context) {
 
-//        MediaPlayer mediaPlayer = MediaPlayer.create(this.R.triangle_audio);
-//        mediaPlayer.start();
-
-
-
-//        android.media.MediaPlayer mediaPlayer = android.media.MediaPlayer.create(Triangle.this,R.raw.triangle_audio);
-//        mediaPlayer.start();
-/*
-        MediaPlayer mediaPlayer = new MediaPlayer();
-        try {
-            mediaPlayer.setDataSource(Triangle.this, Uri.parse("android.resource://"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-*/
+        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle_audio);
+        mediaPlayer.start();
+        Log.i(TAG, "Played the sound of the name of the triangle");
     }
 }

@@ -1,5 +1,6 @@
 package com.example.shape_it_final;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -23,10 +24,10 @@ public class GameActivity extends AppCompatActivity {
 
     //just a starter shape to begin our game
     //Shape currentShape = new Shape(currentShapeID); //needs to be turned into non default constructor
-    Triangle triangle;
+//    Triangle triangle;
 
     //just goofing off to get
-    String triangleWord = "Triangle";
+//    String triangleWord = "Triangle";
 
     //Global declarations to manipulate textView and imageButton
     TextView shapeName;
@@ -47,18 +48,19 @@ public class GameActivity extends AppCompatActivity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         currentShapeID = pref.getInt("currentShape", 0);
 
-        //sets the imageButton to our triangle file
+        //sets up the variables of the Button and the Name text field
         shapeButton = findViewById(R.id.imageButton);
         shapeName = findViewById(R.id.textView);
-//        shapeButton.setImageResource(R.drawable.triangle);
 
+        //Here we create a triangle
         Log.i(TAG, "Instantiate a Triangle");
-        triangle = new Triangle(shapeButton, shapeName);
+        final Triangle triangle = new Triangle(shapeButton, shapeName);
         triangle.draw();
+
         shapeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 triangle.showsName();
-                triangle.saysName();
+                triangle.saysName(getApplicationContext());
             }
         });
 

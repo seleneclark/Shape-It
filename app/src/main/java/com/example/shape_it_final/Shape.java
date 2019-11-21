@@ -1,5 +1,6 @@
 package com.example.shape_it_final;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ public class Shape implements GameItem {
     }
 
     @Override
-    public void saysName() {
+    public void saysName(Context context) {
 
     }
 
