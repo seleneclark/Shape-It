@@ -9,7 +9,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "SHAPEIT MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +19,14 @@ public class MainActivity extends AppCompatActivity {
 
     //starts the next activity
     public void startGame(View view) {
+        //Logging information
+        Log.i(TAG, "Entered startGame in MainActivity");
 
         //set up an intent to move to GameActivity
         Intent startGameIntent = new Intent(this, GameActivity.class);
         startActivity(startGameIntent);
 
-        //Logging information
-        Log.i(TAG, "Started GameActivity");
+
 
     }
 

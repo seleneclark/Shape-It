@@ -1,6 +1,7 @@
 package com.example.shape_it_final;
 
 import android.content.Intent;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ import android.widget.TextView;
 
 public interface GameItem {
 
-    void draw(ImageButton b);
-    void showsName(TextView v);
+    void draw();
+    void showsName();
     void saysName();
 }

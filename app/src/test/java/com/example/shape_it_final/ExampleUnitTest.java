@@ -17,10 +17,34 @@ public class ExampleUnitTest {
 //    public void addition_isCorrect() {
 //        assertEquals(4, 2 + 2);
 //    }
-//    @Test
-//    public void mainAcivityIntent_notNull() {
-//        assertNotNull("Main Activity Intent is NULL", MainActivity.startGameIntent);
-//    }
+
+
+    @Test
+    public void currentShapeID_notNull() {
+        GameActivity testGameActivity = new GameActivity();
+        assertNotNull("There is no ID for a shape item", testGameActivity.currentShapeID);
+    }
+
+    @Test
+    public void currentShape_notNull() {
+        //This shouldn't pass yet.  Not yet written for milestone 1
+        GameActivity testGameActivity = new GameActivity();
+//        assertNotNull("There is no for a shape item", testGameActivity.currentShape);
+    }
+
+    @Test
+    public void shapeName_notNull() {
+        GameActivity testGameActivity = new GameActivity();
+//        testGameActivity.onCreate();
+//        assertNotNull("There is no TextView shapeName", testGameActivity.shapeName);
+    }
+
+    @Test
+    public void shapeButton_notNull() {
+//        GameActivity testGameActivity = new GameActivity();
+//        assertNotNull("There is no ImageButton shapeButton", testGameActivity.shapeButton);
+    }
+
 /*
     @Test
     public void soundFile_notNull() { assertNotNull("Game Item is NULL", GameItemTriangle);}

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.OnLifecycleEvent;
 
 public class GameActivity extends AppCompatActivity {
+    String TAG = "SHAPEIT GameActivity";
 
     //not in use yet
     //Holds our current shape ID
@@ -37,6 +39,7 @@ public class GameActivity extends AppCompatActivity {
     //This begins our gameActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "Started GameActivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
@@ -46,46 +49,55 @@ public class GameActivity extends AppCompatActivity {
 
         //sets the imageButton to our triangle file
         shapeButton = findViewById(R.id.imageButton);
-        shapeButton.setImageResource(R.drawable.triangle);
-
-        //calls the triangle draw function to set our image
-        //crashes program
-        //triangle.draw(shapeButton);
-
-
-        //to update the textview and adds onclick event
         shapeName = findViewById(R.id.textView);
+//        shapeButton.setImageResource(R.drawable.triangle);
+
+        Log.i(TAG, "Instantiate a Triangle");
+        triangle = new Triangle(shapeButton, shapeName);
+        triangle.draw();
         shapeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                triangle.showsName();
+                triangle.saysName();
+            }
+        });
 
-                //simply sets textview to triangle for now
-                //1
-                shapeName.setText(triangleWord);
-                //this crashes for some reason
-                //triangle.showsName(shapeName);
+
+//        //to update the textview and adds onclick event
+//        shapeName = findViewById(R.id.textView);
+//        shapeButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+
+
+
+//                //simply sets textview to triangle for now
+//                //1
+//                shapeName.setText(triangleWord);
+//                //this crashes for some reason
+//                //triangle.showsName(shapeName);
 
                 //2
-                android.media.MediaPlayer mediaPlayer= android.media.MediaPlayer.create(GameActivity.this,R.raw.triangle_audio);
-                mediaPlayer.start();
+//                android.media.MediaPlayer mediaPlayer= android.media.MediaPlayer.create(GameActivity.this,R.raw.triangle_audio);
+//                mediaPlayer.start();
                 //not working yet
                 //triangle.saysName();
 
                 //the idea here is to start a second thread to pause and then update our imageButton
                 //might still need work... it works, just not sure if done properly
-                Runnable r = new Runnable() {
-                    @Override
-                    public void run(){
-                        //4
-                        shapeButton.setImageResource(R.drawable.triangle_name);
-                        shapeName.setText("");
-                    }
-                };
+//                Runnable r = new Runnable() {
+//                    @Override
+//                    public void run(){
+//                        //4
+//                        shapeButton.setImageResource(R.drawable.triangle_name);
+//                        shapeName.setText("");
+//                    }
+//                };
 
                 //3
-                Handler h = new Handler();
-                h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
-            }
-        });
+//                Handler h = new Handler();
+//                h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
+//            }
+//        });
 
 
     }

@@ -1,32 +1,33 @@
 package com.example.shape_it_final;
 
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Shape implements GameItem {
 
     @Override
-    public void draw(ImageButton b) {
+    public void draw() {
 
     }
 
     /***
-    public enum Shape implements GameItem {
-        Triangle;
-    }
-
-    public enum Shape implements GameItem {
-        Triangle {
-            @Override
-            public void draw() {
-                shapeButton = findViewById(R.id.imageButton);
-                shapeButton.setImageResource(R.drawable.triangle);
-                }
-            },
+//    public enum Shape implements GameItem {
+//        Triangle;
+//    }
+//
+//    public enum Shape implements GameItem {
+//        Triangle {
+////            @Override
+//            public void draw() {
+//                shapeButton = findViewById(R.id.imageButton);
+//                shapeButton.setImageResource(R.drawable.triangle);
+//                }
+//            },
 
 ***/
     @Override
-    public void showsName(TextView v) {
+    public void showsName() {
 
     }
 
