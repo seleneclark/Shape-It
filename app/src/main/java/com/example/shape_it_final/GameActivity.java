@@ -78,8 +78,16 @@ public class GameActivity extends AppCompatActivity {
                             currentShapeID = 0; //<--- after we have gone through all the shapes, reset to triangle
 
                         //this will set our next shape and draw it
+//                        gameItem = shapeFactory.getShape(shapeButton, shapeName, currentShapeID);
 
-                        gameItem = shapeFactory.getShape(shapeButton, shapeName, currentShapeID);
+                        /*I'm just trying a different idea here.  Just send the shapeButton and shapeName
+                        and I have a random number generator create choose the next shape. Downside is
+                        that you might get the same shape in a row. Upside is that the game plays forever
+                        and we don't need to keep track of the currentShapeID.
+                        I just overloaded the getShape call so we can go back to it at any time.
+                        - Selene
+                         */
+                        gameItem = shapeFactory.getShape(shapeButton, shapeName);
                         if (gameItem != null) {
                             gameItem.clearName();
                             gameItem.draw();
