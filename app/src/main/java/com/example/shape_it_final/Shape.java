@@ -37,5 +37,10 @@ public class Shape implements GameItem {
 
     }
 
+    @Override
+    public void clearName() {
+
+    }
+
 
 }

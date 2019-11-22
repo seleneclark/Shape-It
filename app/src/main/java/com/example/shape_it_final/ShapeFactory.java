@@ -3,22 +3,20 @@ package com.example.shape_it_final;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.constraintlayout.solver.widgets.Rectangle;
-
 public class ShapeFactory {
 
     //this is called by GameActivity to send back the correct shape depending on the ID
     public GameItem getShape(ImageButton shapeButton, TextView shapeName, int currentShapeID) {
-        if (currentShapeID == 0) {
+        if (currentShapeID == 0) { //<-- 0 returns triangle shape
             return new Triangle(shapeButton, shapeName);
+        }
+        else if (currentShapeID == 1) { //<-- 1 returns circle shape
+            return new Circle(shapeButton, shapeName);
         }
         return null;
     }
 
 /**
-        else if(currentShapeID == 1){
-            return new Circle();
-        }
         else if(currentShapeID == 2){
             return new Rectangle();
 

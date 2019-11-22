@@ -23,4 +23,5 @@ public interface GameItem {
     void draw();
     void showsName();
     void saysName(Context context);
+    void clearName();
 }

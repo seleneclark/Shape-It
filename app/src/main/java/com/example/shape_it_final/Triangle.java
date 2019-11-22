@@ -1,15 +1,10 @@
 package com.example.shape_it_final;
 
 import android.content.Context;
-import android.media.Image;
 import android.media.MediaPlayer;
-import android.os.Handler;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
-import java.lang.ref.WeakReference;
 
 public class Triangle implements GameItem {
 
@@ -56,5 +51,10 @@ public class Triangle implements GameItem {
         MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle_audio);
         mediaPlayer.start();
         Log.i(TAG, "Played the sound of the name of the triangle");
+    }
+
+    @Override
+    public void clearName() {
+        triangleName.setText("");
     }
 }
