@@ -22,11 +22,15 @@ public class Circle implements GameItem {
     public void draw() {
         //this needs changed to circle image
         circleButton.setImageResource(R.drawable.triangle_name);
+        Log.i(TAG, "Drew a Circle");
     }
 
     @Override
     public void showsName() {
+
         circleName.setText("Circle");
+        Log.i(TAG, "Shows the Circle Name");
+
     }
 
     @Override
@@ -34,10 +38,15 @@ public class Circle implements GameItem {
         //this needs changed to circle audio
         MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle_audio);
         mediaPlayer.start();
+        Log.i(TAG, "Played the sound of the name of the circle");
+
     }
 
     @Override
     public void clearName() {
+
         circleName.setText("");
+        Log.i(TAG, "Cleared the Circle Name");
+
     }
 }

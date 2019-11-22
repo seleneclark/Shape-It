@@ -50,9 +50,10 @@ public class GameActivity extends AppCompatActivity {
         shapeName = findViewById(R.id.textView);
 
         //logging for debugging
-        Log.i(TAG, "Instantiate a Triangle");
+        Log.i(TAG, "Instantiate a shapeFactory");
         //Create our game item using our factory method based upon shapeID
         gameItem = shapeFactory.getShape(shapeButton, shapeName, currentShapeID);
+        Log.i(TAG, "Got a game item " + gameItem);
         gameItem.draw();
 
         //This listens for a click on our shape
@@ -79,8 +80,10 @@ public class GameActivity extends AppCompatActivity {
                         //this will set our next shape and draw it
 
                         gameItem = shapeFactory.getShape(shapeButton, shapeName, currentShapeID);
-                        gameItem.clearName();
-                        gameItem.draw();
+                        if (gameItem != null) {
+                            gameItem.clearName();
+                            gameItem.draw();
+                        }
                     }
                 };
 

@@ -16,19 +16,6 @@ public class Triangle implements GameItem {
         Log.i(TAG, "Started Triangle class");
         triangleButton = shapeButton;
         triangleName = shapeName;
-
-//        shapeButton = findViewById(R.id.imageButton);
-//        shapeName = findViewById(R.id.textView);
-//        shapeButton.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View v) {
-////            shapeName.setText(triangleWord);
-//            android.media.MediaPlayer mediaPlayer= android.media.MediaPlayer.create(GameActivity.this,R.raw.triangle_audio);
-//            mediaPlayer.start();
-////            Handler h = new Handler();
-////            h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
-//            }
-//        });
-
     }
 
     @Override
@@ -41,7 +28,7 @@ public class Triangle implements GameItem {
     public void showsName() {
         triangleName.setText("Triangle");
         //triangleButton.setImageResource(R.drawable.triangle_name);
-        Log.i(TAG, "Drew a Triangle with the name");
+        Log.i(TAG, "Shows the Triangle Name");
     }
 
     //plays the sound of a given shape, finding the context was difficult, not sure if right
@@ -55,6 +42,9 @@ public class Triangle implements GameItem {
 
     @Override
     public void clearName() {
+
         triangleName.setText("");
+        Log.i(TAG, "Cleared the Triangle Name");
+
     }
 }
