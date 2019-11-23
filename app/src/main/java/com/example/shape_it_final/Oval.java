@@ -41,8 +41,7 @@ public class Oval implements GameItem {
 
     @Override
     public void draw() {
-        //this needs changed to Oval image
-        ovalButton.setImageResource(R.drawable.triangle_name);
+        ovalButton.setImageResource(R.drawable.oval);
         Log.i(TAG, "Drew an Oval");
     }
 

@@ -41,8 +41,7 @@ public class Pentagon implements GameItem {
 
     @Override
     public void draw() {
-        //this needs changed to Pentagon image
-        pentagonButton.setImageResource(R.drawable.triangle_name);
+        pentagonButton.setImageResource(R.drawable.pentagon);
         Log.i(TAG, "Drew a Pentagon");
     }
 

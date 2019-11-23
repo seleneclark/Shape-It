@@ -32,7 +32,7 @@ public class ShapeFactory {
      */
 
     public GameItem getShape(ImageButton shapeButton, TextView shapeName) {
-        int numberGameItems = 3; //right now its Circle, Triangle, Square
+        int numberGameItems = 8; //right now its Circle, Triangle, Square
         Random random = new Random();
         int randomNumber = random.nextInt(numberGameItems);
 
@@ -43,8 +43,18 @@ public class ShapeFactory {
                 return new Circle(shapeButton, shapeName);
             case 2:
                 return new Square(shapeButton, shapeName);
-            default:
-                return null;
+            case 3:
+                return new Rectangle(shapeButton, shapeName);
+            case 4:
+                return new Star(shapeButton, shapeName);
+            case 5:
+                return new Oval(shapeButton, shapeName);
+            case 6:
+                return new Heart(shapeButton, shapeName);
+            case 7:
+                return new Pentagon(shapeButton, shapeName);
+                default:
+                    return null;
         }
 
 

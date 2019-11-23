@@ -20,8 +20,7 @@ public class Circle implements GameItem {
 
     @Override
     public void draw() {
-        //this needs changed to circle image
-        circleButton.setImageResource(R.drawable.triangle_name);
+        circleButton.setImageResource(R.drawable.circle);
         Log.i(TAG, "Drew a Circle");
     }
 

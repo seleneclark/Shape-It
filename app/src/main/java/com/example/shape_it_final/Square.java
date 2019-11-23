@@ -41,8 +41,7 @@ public class Square implements GameItem {
 
     @Override
     public void draw() {
-        //this needs changed to Square image
-        squareButton.setImageResource(R.drawable.triangle_name);
+        squareButton.setImageResource(R.drawable.square);
         Log.i(TAG, "Drew a Square");
     }
 

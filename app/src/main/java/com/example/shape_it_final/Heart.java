@@ -40,8 +40,7 @@ public class Heart implements GameItem {
 
     @Override
     public void draw() {
-        //this needs changed to Heart image
-        heartButton.setImageResource(R.drawable.triangle2);
+        heartButton.setImageResource(R.drawable.heart);
         Log.i(TAG, "Drew a Heart");
     }
 

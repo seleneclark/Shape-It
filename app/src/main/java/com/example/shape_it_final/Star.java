@@ -41,8 +41,7 @@ public class Star implements GameItem {
 
     @Override
     public void draw() {
-        //this needs changed to Star image
-        starButton.setImageResource(R.drawable.triangle_name);
+        starButton.setImageResource(R.drawable.star);
         Log.i(TAG, "Drew a Square");
     }
 

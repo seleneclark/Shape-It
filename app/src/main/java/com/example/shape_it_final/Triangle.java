@@ -12,6 +12,20 @@ public class Triangle implements GameItem {
     private ImageButton triangleButton;
     private TextView triangleName;
 
+    /**
+     * Triangle Class
+     *
+     * A Triangle is a type of GameItem that will appear in GameActivity to
+     * be touched where it will then show its name and say its name
+     *
+     * Implements the GameItem Interface
+     *
+     *Methods:
+     *  draw() - Draw will draw the GameItem on the screen
+     *  showsName() - will make the name of the GameItem appear
+     *  saysName() - will say the name of the GameItem
+     *  clearName() - will clear the name from the screen
+     */
     Triangle(ImageButton shapeButton, TextView shapeName) {
         Log.i(TAG, "Started Triangle class");
         triangleButton = shapeButton;
@@ -20,7 +34,7 @@ public class Triangle implements GameItem {
 
     @Override
     public void draw() {
-        triangleButton.setImageResource(R.drawable.triangle2);
+        triangleButton.setImageResource(R.drawable.triangle);
         Log.i(TAG, "Drew a Triangle");
     }
 

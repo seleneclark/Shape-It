@@ -40,8 +40,7 @@ public class Rectangle implements GameItem {
 
     @Override
     public void draw() {
-        //this needs changed to Rectangle image
-        rectangleButton.setImageResource(R.drawable.triangle2);
+        rectangleButton.setImageResource(R.drawable.rectangle);
         Log.i(TAG, "Drew a Rectangle");
     }
 
