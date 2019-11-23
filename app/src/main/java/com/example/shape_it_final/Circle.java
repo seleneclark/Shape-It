@@ -35,7 +35,7 @@ public class Circle implements GameItem {
     @Override
     public void saysName(Context context) {
         //this needs changed to circle audio
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle_audio);
+        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.circle);
         mediaPlayer.start();
         Log.i(TAG, "Played the sound of the name of the circle");
 

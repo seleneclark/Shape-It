@@ -54,7 +54,7 @@ public class Square implements GameItem {
     @Override
     public void saysName(Context context) {
         //this needs changed to Square audio
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle_audio);
+        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.square);
         mediaPlayer.start();
         Log.i(TAG, "Played the sound of the name of the Square");
     }

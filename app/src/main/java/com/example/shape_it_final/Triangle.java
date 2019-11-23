@@ -49,7 +49,7 @@ public class Triangle implements GameItem {
     @Override
     public void saysName(Context context) {
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle_audio);
+        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle);
         mediaPlayer.start();
         Log.i(TAG, "Played the sound of the name of the triangle");
     }
