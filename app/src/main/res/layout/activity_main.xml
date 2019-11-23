@@ -49,8 +49,9 @@
         android:id="@+id/imageView"
         android:layout_width="159dp"
         android:layout_height="198dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/background_image" />
+        app:srcCompat="@drawable/triangle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

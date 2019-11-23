@@ -11,20 +11,29 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:adjustViewBounds="true"
+        android:background="@null"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        android:background="@null" />
+        app:layout_constraintVertical_bias="0.524" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="150dp"
-        android:layout_height="47dp"
+        android:layout_width="253dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:fontFamily="casual"
         app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922" />
 </androidx.constraintlayout.widget.ConstraintLayout>
