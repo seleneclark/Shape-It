@@ -20,7 +20,7 @@ public class Triangle implements GameItem {
 
     @Override
     public void draw() {
-        triangleButton.setImageResource(R.drawable.triangle);
+        triangleButton.setImageResource(R.drawable.triangle2);
         Log.i(TAG, "Drew a Triangle");
     }
 
