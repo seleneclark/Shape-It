@@ -52,7 +52,7 @@ public class GameActivity extends AppCompatActivity {
         //logging for debugging
         Log.i(TAG, "Instantiate a shapeFactory");
         //Create our game item using our factory method based upon shapeID
-        gameItem = shapeFactory.getShape(shapeButton, shapeName, currentShapeID);
+        gameItem = shapeFactory.getShape(shapeButton, shapeName);
         Log.i(TAG, "Got a game item " + gameItem);
         gameItem.draw();
 
@@ -72,10 +72,10 @@ public class GameActivity extends AppCompatActivity {
                     public void run(){
                         //4
                         //this counts our clicks on our button
-                        if(currentShapeID <= 1)//<--- this number needs changed based on number of shapes
+                        /*if(currentShapeID <= 1)//<--- this number needs changed based on number of shapes
                             currentShapeID++;  //<-- increment up one shape
-                        else if(currentShapeID >= 2)//<----this number also needs changed based on number of shapes
-                            currentShapeID = 0; //<--- after we have gone through all the shapes, reset to triangle
+                        else if(currentShapeID >= 10)//<----this number also needs changed based on number of shapes
+                            currentShapeID = 0;*/ //<--- after we have gone through all the shapes, reset to triangle
 
                         //this will set our next shape and draw it
 //                        gameItem = shapeFactory.getShape(shapeButton, shapeName, currentShapeID);
