@@ -7,32 +7,10 @@ import java.util.Random;
 
 public class ShapeFactory {
 
+    //this holds a value to prevent the same shape from showing up twice in a row
     int previousNumber;
 
-    /*//this is called by GameActivity to send back the correct shape depending on the ID
-    public GameItem getShape(ImageButton shapeButton, TextView shapeName, int currentShapeID) {
-        if (currentShapeID == 0) { //<-- 0 returns triangle shape
-            return new Triangle(shapeButton, shapeName);
-        }
-        else if (currentShapeID == 1) { //<-- 1 returns circle shape
-            return new Circle(shapeButton, shapeName);
-        }
-        *//*
-         else if(currentShapeID == 2){
-         return new Rectangle();
-         }
-         else if(currentShapeID == 3){
-         return new Square();
-         }
-        *//*
-        return null;
-
-    }*/
-
-    /*Trying a random number generator to go through the different shapes.
-    I just overloaded the getShape from above.
-     */
-
+    //This function randomly generates a shape to send to GameActivity
     public GameItem getShape(ImageButton shapeButton, TextView shapeName) {
         int numberGameItems = 8;
         Random random = new Random();
@@ -70,10 +48,7 @@ public class ShapeFactory {
                 default:
                     return null;
         }
-
-
     }
-
 }
 
 
