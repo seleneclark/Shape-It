@@ -2,6 +2,7 @@ package com.example.shape_it_final;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -41,7 +42,6 @@ public class Triangle implements GameItem {
     @Override
     public void showsName() {
         triangleName.setText("Triangle");
-        //triangleButton.setImageResource(R.drawable.triangle_name);
         Log.i(TAG, "Shows the Triangle Name");
     }
 
@@ -49,8 +49,21 @@ public class Triangle implements GameItem {
     @Override
     public void saysName(Context context) {
 
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle);
         mediaPlayer.start();
+
+        Runnable r = new Runnable() {
+            @Override
+            public void run(){
+                mediaPlayer.release();
+            }
+        };
+
+        //helps handled the delay
+        Handler h = new Handler();
+        h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
+
+
         Log.i(TAG, "Played the sound of the name of the triangle");
     }
 

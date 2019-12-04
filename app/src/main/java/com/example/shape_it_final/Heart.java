@@ -2,6 +2,7 @@ package com.example.shape_it_final;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -55,8 +56,20 @@ public class Heart implements GameItem {
     @Override
     public void saysName(Context context) {
         //this needs changed to Star audio
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.heart);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.heart);
         mediaPlayer.start();
+
+        Runnable r = new Runnable() {
+            @Override
+            public void run(){
+                mediaPlayer.release();
+            }
+        };
+
+        //3 helps handled the delay
+        Handler h = new Handler();
+        h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
+
         Log.i(TAG, "Played the sound of the name of the heart");
     }
 
