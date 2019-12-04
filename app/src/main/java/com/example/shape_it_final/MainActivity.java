@@ -26,8 +26,15 @@ public class MainActivity extends AppCompatActivity {
         Intent startGameIntent = new Intent(this, GameActivity.class);
         startActivity(startGameIntent);
 
+    }
 
+    public void startColor(View view) {
+        //Logging information
+        Log.i(TAG, "Entered startColor in MainActivity");
 
+        //set up an intent to move to ColorActivity
+        Intent startGameIntent = new Intent(this, ColorActivity.class);
+        startActivity(startGameIntent);
     }
 
 }

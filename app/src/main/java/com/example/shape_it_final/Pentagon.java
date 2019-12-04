@@ -34,7 +34,7 @@ public class Pentagon implements GameItem {
      * @param shapeName - reference to the TextView on GameActivity
      */
     Pentagon(ImageButton shapeButton, TextView shapeName) {
-        Log.i(TAG, "Started Square class");
+        Log.i(TAG, "Started Pentagon class");
         pentagonButton = shapeButton;
         pentagonName = shapeName;
     }
