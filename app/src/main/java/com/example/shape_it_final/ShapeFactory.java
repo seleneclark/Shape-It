@@ -10,7 +10,7 @@ public class ShapeFactory {
     //this holds a value to prevent the same shape from showing up twice in a row
     int previousNumber;
 
-    //This function randomly generates a shape to send to GameActivity
+    //This function randomly generates a shape to send to ShapeActivity
     public GameItem getShape(ImageButton shapeButton, TextView shapeName) {
         int numberGameItems = 8;
         Random random = new Random();

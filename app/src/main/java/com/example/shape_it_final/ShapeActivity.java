@@ -11,10 +11,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class GameActivity extends AppCompatActivity {
+public class ShapeActivity extends AppCompatActivity {
 
     //for logging and debugging
-    String TAG = "SHAPEIT GameActivity";
+    String TAG = "SHAPEIT ShapeActivity";
 
     //Global declarations to manipulate textView and imageButton
     TextView shapeName;
@@ -29,11 +29,11 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //just logging for debugging
-        Log.i(TAG, "Started GameActivity");
+        Log.i(TAG, "Started ShapeActivity");
 
         //getting started
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_shape);
 
         //commented out because we are using random shapes and don't need to save state of shape
         //saves the state of our game and shape by recording the ID of the current shape

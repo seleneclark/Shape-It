@@ -9,7 +9,7 @@ import android.widget.TextView;
 /**
  * GameItem interface
  *
- * A GameItem is an item that will appear in the GameActivity
+ * A GameItem is an item that will appear in the ShapeActivity
  * to be touched where it will then show its name and say its name.
  * Current GameItems:
  *      Triangle
