@@ -3,6 +3,7 @@ package com.example.shape_it_final;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -14,15 +15,17 @@ import androidx.appcompat.app.AppCompatActivity;
 public class GameActivity extends AppCompatActivity {
 
     //for logging and debugging
-    String TAG = "SHAPEIT GameActivity";
+    private String TAG = "SHAPEIT GameActivity";
 
     //Global declarations to manipulate textView and imageButton
-    TextView shapeName;
-    ImageButton shapeButton;
+    private TextView shapeName;
+    private ImageButton shapeButton;
 
     //Global declarations to manipulate gameItem and shapeFactory
-    GameItem gameItem;
-    ShapeFactory shapeFactory;
+    private GameItem gameItem;
+    private ShapeFactory shapeFactory;
+
+    private long clickTime = 0;
 
 
     //This begins our gameActivity
@@ -59,9 +62,18 @@ public class GameActivity extends AppCompatActivity {
         //calling the draw function to start our first shape
         gameItem.draw();
 
+
+
         //This listens for a click on our shape
         shapeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                //if enough time hasn't passed, then we return out of this click
+                if (SystemClock.elapsedRealtime() - clickTime < 3000){ //<--- 3 second delay time
+                    return;
+                }
+                //this just adds up the time with each click so the next click has accurate data
+                clickTime = SystemClock.elapsedRealtime();
 
                 //shows the name above the shape image and starts the sound file
                 //1
