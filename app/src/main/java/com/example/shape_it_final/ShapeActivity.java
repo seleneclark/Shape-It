@@ -3,7 +3,6 @@ package com.example.shape_it_final;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -12,31 +11,29 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class GameActivity extends AppCompatActivity {
+public class ShapeActivity extends AppCompatActivity {
 
     //for logging and debugging
-    private String TAG = "SHAPEIT GameActivity";
+    String TAG = "SHAPEIT ShapeActivity";
 
     //Global declarations to manipulate textView and imageButton
-    private TextView shapeName;
-    private ImageButton shapeButton;
+    TextView shapeName;
+    ImageButton shapeButton;
 
     //Global declarations to manipulate gameItem and shapeFactory
-    private GameItem gameItem;
-    private ShapeFactory shapeFactory;
-
-    private long clickTime = 0;
+    GameItem gameItem;
+    ShapeFactory shapeFactory;
 
 
     //This begins our gameActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //just logging for debugging
-        Log.i(TAG, "Started GameActivity");
+        Log.i(TAG, "Started ShapeActivity");
 
         //getting started
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_shape);
 
         //commented out because we are using random shapes and don't need to save state of shape
         //saves the state of our game and shape by recording the ID of the current shape
@@ -62,18 +59,9 @@ public class GameActivity extends AppCompatActivity {
         //calling the draw function to start our first shape
         gameItem.draw();
 
-
-
         //This listens for a click on our shape
         shapeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-                //if enough time hasn't passed, then we return out of this click
-                if (SystemClock.elapsedRealtime() - clickTime < 3000){ //<--- 3 second delay time
-                    return;
-                }
-                //this just adds up the time with each click so the next click has accurate data
-                clickTime = SystemClock.elapsedRealtime();
 
                 //shows the name above the shape image and starts the sound file
                 //1

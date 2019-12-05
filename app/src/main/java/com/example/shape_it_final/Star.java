@@ -10,7 +10,7 @@ import android.widget.TextView;
 /**
  * Star Class
  *
- * A Star is a type of GameItem that will appear in GameActivity to
+ * A Star is a type of GameItem that will appear in ShapeActivity to
  * be touched where it will then show its name and say its name
  *
  * Implements the GameItem Interface
@@ -31,8 +31,8 @@ public class Star implements GameItem {
      * Star Constructor
      *
      * Assigns the parameters to the method variables.
-     * @param shapeButton - reference to the button on GameActivity
-     * @param shapeName - reference to the TextView on GameActivity
+     * @param shapeButton - reference to the button on ShapeActivity
+     * @param shapeName - reference to the TextView on ShapeActivity
      */
     Star(ImageButton shapeButton, TextView shapeName) {
         Log.i(TAG, "Started Star class");

@@ -10,7 +10,7 @@ import android.widget.TextView;
 /**
  * Square Class
  *
- * A Square is a type of GameItem that will appear in GameActivity to
+ * A Square is a type of GameItem that will appear in ShapeActivity to
  * be touched where it will then show its name and say its name
  *
  * Implements the GameItem Interface
@@ -31,8 +31,8 @@ public class Square implements GameItem {
      * Square Constructor
      *
      * Assigns the parameters to the method variables.
-     * @param shapeButton - reference to the button on GameActivity
-     * @param shapeName - reference to the TextView on GameActivity
+     * @param shapeButton - reference to the button on ShapeActivity
+     * @param shapeName - reference to the TextView on ShapeActivity
      */
     Square(ImageButton shapeButton, TextView shapeName) {
         Log.i(TAG, "Started Square class");

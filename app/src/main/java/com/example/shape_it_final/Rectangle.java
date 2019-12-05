@@ -9,7 +9,7 @@ import android.widget.TextView;
 /**
  * Rectangle Class
  *
- * A Rectangle is a type of GameItem that will appear in GameActivity to
+ * A Rectangle is a type of GameItem that will appear in ShapeActivity to
  * be touched where it will then show its name and say its name
  *
  * Implements the GameItem Interface
@@ -30,8 +30,8 @@ public class Rectangle implements GameItem {
      * Rectangle Constructor
      *
      * Assigns the parameters to the method variables.
-     * @param shapeButton - reference to the button on GameActivity
-     * @param shapeName - reference to the TextView on GameActivity
+     * @param shapeButton - reference to the button on ShapeActivity
+     * @param shapeName - reference to the TextView on ShapeActivity
      */
     Rectangle(ImageButton shapeButton, TextView shapeName) {
         Log.i(TAG, "Started Rectangle class");
