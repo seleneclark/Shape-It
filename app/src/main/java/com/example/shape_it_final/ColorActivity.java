@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,6 +22,8 @@ public class ColorActivity extends AppCompatActivity {
     GameItem gameItem;
     ColorFactory colorFactory;
 
+    private long clickTime = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //just logging for debugging
@@ -35,13 +38,13 @@ public class ColorActivity extends AppCompatActivity {
         colorName = findViewById(R.id.textView3);
 
         //logging for debugging
-        Log.i(TAG, "Instantiate a shapeFactory");
+        Log.i(TAG, "Instantiate a colorFactory");
 
         //initializing our colorFactory
         colorFactory = new ColorFactory();
 
         //Create our game item using our factory random generator method
-        gameItem = colorFactory.getShape(colorButton, colorName);
+        gameItem = colorFactory.getColor(colorButton, colorName);
 
         //logging for debugging
         Log.i(TAG, "Got a game item " + gameItem);
@@ -52,6 +55,13 @@ public class ColorActivity extends AppCompatActivity {
         //This listens for a click on our shape
         colorButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                //
+                if (SystemClock.elapsedRealtime() - clickTime < 3000){
+                    return;
+                }
+                //
+                clickTime = SystemClock.elapsedRealtime();
 
                 //shows the name above the shape image and starts the sound file
                 //1
@@ -67,7 +77,7 @@ public class ColorActivity extends AppCompatActivity {
                         //After 3 seconds, our shape will update and we will move to the next
                         //gameItem
                         //4
-                        gameItem = colorFactory.getShape(colorButton, colorName);
+                        gameItem = colorFactory.getColor(colorButton, colorName);
                         if (gameItem != null) {
                             gameItem.clearName();
                             gameItem.draw();

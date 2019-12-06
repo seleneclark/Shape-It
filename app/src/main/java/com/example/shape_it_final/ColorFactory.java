@@ -11,8 +11,8 @@ public class ColorFactory {
     int previousNumber;
 
     //This function randomly generates a color to send to GameActivity
-    public GameItem getShape(ImageButton colorButton, TextView colorName) {
-        int numberGameItems = 8;
+    public GameItem getColor(ImageButton colorButton, TextView colorName) {
+        int numberGameItems = 7;
         Random random = new Random();
         int randomNumber = random.nextInt(numberGameItems);
 
@@ -23,28 +23,25 @@ public class ColorFactory {
         switch (randomNumber) {
             case 0:
                 previousNumber = 0;
-                return new Triangle(colorButton, colorName);
+                return new Orange(colorButton, colorName);
             case 1:
                 previousNumber = 1;
-                return new Circle(colorButton, colorName);
+                return new Blue(colorButton, colorName);
             case 2:
                 previousNumber = 2;
-                return new Square(colorButton, colorName);
+                return new Green(colorButton, colorName);
             case 3:
                 previousNumber = 3;
-                return new Rectangle(colorButton, colorName);
+                return new Pink(colorButton, colorName);
             case 4:
                 previousNumber = 4;
-                return new Star(colorButton, colorName);
+                return new Purple(colorButton, colorName);
             case 5:
                 previousNumber = 5;
-                return new Oval(colorButton, colorName);
+                return new Red(colorButton, colorName);
             case 6:
                 previousNumber = 6;
-                return new Heart(colorButton, colorName);
-            case 7:
-                previousNumber = 7;
-                return new Pentagon(colorButton, colorName);
+                return new Yellow(colorButton, colorName);
             default:
                 return null;
         }
