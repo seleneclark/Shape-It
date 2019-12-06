@@ -19,7 +19,7 @@ public class ColorActivity extends AppCompatActivity {
 
     //Global declarations to manipulate gameItem and shapeFactory
     GameItem gameItem;
-    ShapeFactory shapeFactory;
+    ColorFactory colorFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +37,11 @@ public class ColorActivity extends AppCompatActivity {
         //logging for debugging
         Log.i(TAG, "Instantiate a shapeFactory");
 
-        //initializing our shapeFactory
-        shapeFactory = new ShapeFactory();
+        //initializing our colorFactory
+        colorFactory = new ColorFactory();
 
         //Create our game item using our factory random generator method
-        gameItem = shapeFactory.getShape(colorButton, colorName);
+        gameItem = colorFactory.getShape(colorButton, colorName);
 
         //logging for debugging
         Log.i(TAG, "Got a game item " + gameItem);
@@ -67,7 +67,7 @@ public class ColorActivity extends AppCompatActivity {
                         //After 3 seconds, our shape will update and we will move to the next
                         //gameItem
                         //4
-                        gameItem = shapeFactory.getShape(colorButton, colorName);
+                        gameItem = colorFactory.getShape(colorButton, colorName);
                         if (gameItem != null) {
                             gameItem.clearName();
                             gameItem.draw();
