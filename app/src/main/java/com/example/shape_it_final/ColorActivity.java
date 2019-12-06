@@ -31,7 +31,7 @@ public class ColorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_color);
 
         //sets up the variables of the Button and the Name text field
-        colorButton = findViewById(R.id.imageButton2);
+        colorButton = findViewById(R.id.colorButton);
         colorName = findViewById(R.id.textView3);
 
         //logging for debugging

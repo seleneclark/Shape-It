@@ -3,6 +3,7 @@ package com.example.shape_it_final;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,10 +12,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class GameActivity extends AppCompatActivity {
+public class ShapeActivity extends AppCompatActivity {
 
     //for logging and debugging
-    String TAG = "SHAPEIT GameActivity";
+    String TAG = "SHAPEIT ShapeActivity";
 
     //Global declarations to manipulate textView and imageButton
     TextView shapeName;
@@ -24,16 +25,18 @@ public class GameActivity extends AppCompatActivity {
     GameItem gameItem;
     ShapeFactory shapeFactory;
 
+    private long clickTime = 0;
+
 
     //This begins our gameActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //just logging for debugging
-        Log.i(TAG, "Started GameActivity");
+        Log.i(TAG, "Started ShapeActivity");
 
         //getting started
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_shape);
 
         //commented out because we are using random shapes and don't need to save state of shape
         //saves the state of our game and shape by recording the ID of the current shape
@@ -62,6 +65,13 @@ public class GameActivity extends AppCompatActivity {
         //This listens for a click on our shape
         shapeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                //
+                if (SystemClock.elapsedRealtime() - clickTime < 3000){
+                    return;
+                }
+                //
+                clickTime = SystemClock.elapsedRealtime();
 
                 //shows the name above the shape image and starts the sound file
                 //1

@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         //Logging information
         Log.i(TAG, "Entered startGame in MainActivity");
 
-        //set up an intent to move to GameActivity
-        Intent startGameIntent = new Intent(this, GameActivity.class);
+        //set up an intent to move to ShapeActivity
+        Intent startGameIntent = new Intent(this, ShapeActivity.class);
         startActivity(startGameIntent);
 
     }

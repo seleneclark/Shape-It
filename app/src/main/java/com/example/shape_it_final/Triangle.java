@@ -16,7 +16,7 @@ public class Triangle implements GameItem {
     /**
      * Triangle Class
      *
-     * A Triangle is a type of GameItem that will appear in GameActivity to
+     * A Triangle is a type of GameItem that will appear in ShapeActivity to
      * be touched where it will then show its name and say its name
      *
      * Implements the GameItem Interface
