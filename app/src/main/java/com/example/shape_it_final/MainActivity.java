@@ -1,12 +1,17 @@
 package com.example.shape_it_final;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+/**
+ * This is the starting activity of the game.
+ *
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "SHAPEIT MainActivity";
@@ -17,24 +22,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //starts the next activity
-    public void startGame(View view) {
-        //Logging information
-        Log.i(TAG, "Entered startGame in MainActivity");
+    /**
+     * This method starts the Shape Activity Game.
+     *
+     * When the "Shapes" button is pressed in the MainActivity, this method is called
+     * and the Shapes game is started.
+     * @param view
+     */
+    public void startShape(View view) {
+        Log.i(TAG, "Entered startShape in MainActivity");
 
         //set up an intent to move to ShapeActivity
-        Intent startGameIntent = new Intent(this, ShapeActivity.class);
-        startActivity(startGameIntent);
+        Intent startShapeIntent = new Intent(this, ShapeActivity.class);
+        startActivity(startShapeIntent);
 
     }
 
+    /**
+     *
+     * @param view
+     */
     public void startColor(View view) {
-        //Logging information
         Log.i(TAG, "Entered startColor in MainActivity");
 
         //set up an intent to move to ColorActivity
-        Intent startGameIntent = new Intent(this, ColorActivity.class);
-        startActivity(startGameIntent);
+        Intent startColorIntent = new Intent(this, ColorActivity.class);
+        startActivity(startColorIntent);
     }
 
 }

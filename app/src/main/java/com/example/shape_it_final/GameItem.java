@@ -1,25 +1,30 @@
 package com.example.shape_it_final;
 
 import android.content.Context;
-import android.content.Intent;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 /**
  * GameItem interface
  *
- * A GameItem is an item that will appear in the ShapeActivity
+ * A GameItem is an item that will appear in the ShapeActivity or ColorActivity
  * to be touched where it will then show its name and say its name.
- * Current GameItems:
+ * GameItems for ShapeActivity:
  *      Triangle
  *      Square
  *      Circle
+ *      Heart
+ *      Oval
+ *      Pentagon
+ *      Rectangle
+ *      Star
  *
- * Future types of GameItems:
- *      Shape - several different shapes
- *      Number
- *      Color
+ * GameItems for ColorActivity:
+ *      Blue
+ *      Green
+ *      Orange
+ *      Pink
+ *      Purple
+ *      Red
+ *      Yellow
  *
  * Methods:
  *  draw() - Draw will draw the GameItem on the screen
