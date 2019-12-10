@@ -1,7 +1,6 @@
 package com.example.shape_it_final;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -9,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ColorActivity extends AppCompatActivity {
     //for logging and debugging
@@ -51,6 +52,10 @@ public class ColorActivity extends AppCompatActivity {
 
         //calling the draw function to start our first shape
         gameItem.draw();
+
+        //Playing the auditory instructions
+        final MediaPlayer mediaPlayer = MediaPlayer.create(ColorActivity.this,R.raw.color_intro);
+        mediaPlayer.start();
 
         //This listens for a click on our shape
         colorButton.setOnClickListener(new View.OnClickListener() {

@@ -55,7 +55,7 @@ public class Rectangle implements GameItem {
     //plays the sound of a given shape, finding the context was difficult, not sure if right
     @Override
     public void saysName(Context context) {
-        //this needs changed to Rectangle audio
+
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.rectangle);
         mediaPlayer.start();
 
