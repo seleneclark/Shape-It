@@ -54,8 +54,8 @@ public class Green implements GameItem {
 
     @Override
     public void saysName(Context context) {
-        //this needs changed to Green audio
-        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.oval);
+
+        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.green);
         mediaPlayer.start();
 
         Runnable r = new Runnable() {

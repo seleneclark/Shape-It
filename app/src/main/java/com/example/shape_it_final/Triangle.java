@@ -7,6 +7,20 @@ import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+ * Triangle Class
+ *
+ * A Triangle is a type of GameItem that will appear in ShapeActivity to
+ * be touched where it will then show its name and say its name
+ *
+ * Implements the GameItem Interface
+ *
+ *Methods:
+ *  draw() - Draw will draw the GameItem on the screen
+ *  showsName() - will make the name of the GameItem appear
+ *  saysName() - will say the name of the GameItem
+ *  clearName() - will clear the name from the screen
+ */
 public class Triangle implements GameItem {
 
     private String TAG = "SHAPEIT Triangle";
@@ -14,18 +28,11 @@ public class Triangle implements GameItem {
     private TextView triangleName;
 
     /**
-     * Triangle Class
+     * Triangle Constructor
      *
-     * A Triangle is a type of GameItem that will appear in ShapeActivity to
-     * be touched where it will then show its name and say its name
-     *
-     * Implements the GameItem Interface
-     *
-     *Methods:
-     *  draw() - Draw will draw the GameItem on the screen
-     *  showsName() - will make the name of the GameItem appear
-     *  saysName() - will say the name of the GameItem
-     *  clearName() - will clear the name from the screen
+     * Assigns the parameters to the method variables.
+     * @param shapeButton - reference to the button on ShapeActivity
+     * @param shapeName - reference to the TextView on ShapeActivity
      */
     Triangle(ImageButton shapeButton, TextView shapeName) {
         Log.i(TAG, "Started Triangle class");
@@ -45,7 +52,6 @@ public class Triangle implements GameItem {
         Log.i(TAG, "Shows the Triangle Name");
     }
 
-    //plays the sound of a given shape, finding the context was difficult, not sure if right
     @Override
     public void saysName(Context context) {
 

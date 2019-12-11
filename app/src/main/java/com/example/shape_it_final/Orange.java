@@ -55,7 +55,7 @@ public class Orange implements GameItem {
     @Override
     public void saysName(Context context) {
         //this needs changed to Orange audio
-        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.oval);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.orange);
         mediaPlayer.start();
 
         Runnable r = new Runnable() {

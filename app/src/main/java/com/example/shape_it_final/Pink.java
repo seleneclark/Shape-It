@@ -55,7 +55,7 @@ public class Pink implements GameItem {
     @Override
     public void saysName(Context context) {
         //this needs changed to Pink audio
-        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.oval);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.pink);
         mediaPlayer.start();
 
         Runnable r = new Runnable() {

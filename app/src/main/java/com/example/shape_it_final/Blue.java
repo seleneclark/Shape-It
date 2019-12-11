@@ -8,9 +8,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 /**
- * Orange Class
+ * Blue Class
  *
- * An Orange is a type of GameItem that will appear in ColorActivity to
+ * A Blue is a type of GameItem that will appear in ColorActivity to
  * be touched where it will then show its name and say its name
  *
  * Implements the GameItem Interface
@@ -55,7 +55,7 @@ public class Blue implements GameItem {
     @Override
     public void saysName(Context context) {
         //this needs changed to Blue audio
-        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.oval);
+        final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.blue);
         mediaPlayer.start();
 
         Runnable r = new Runnable() {

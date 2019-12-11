@@ -1,6 +1,7 @@
 package com.example.shape_it_final;
 
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -61,6 +62,10 @@ public class ShapeActivity extends AppCompatActivity {
 
         //calling the draw function to start our first shape
         gameItem.draw();
+
+        //Playing the auditory instructions
+        final MediaPlayer mediaPlayer = MediaPlayer.create(ShapeActivity.this,R.raw.shape_intro);
+        mediaPlayer.start();
 
         //This listens for a click on our shape
         shapeButton.setOnClickListener(new View.OnClickListener() {
