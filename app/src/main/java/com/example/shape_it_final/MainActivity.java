@@ -14,8 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class MainActivity extends AppCompatActivity {
 
+    //for debugging
     private static final String TAG = "SHAPEIT MainActivity";
 
+    //starts our main activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void startShape(View view) {
+        //logging for debugging
         Log.i(TAG, "Entered startShape in MainActivity");
 
         //set up an intent to move to ShapeActivity
         Intent startShapeIntent = new Intent(this, ShapeActivity.class);
         startActivity(startShapeIntent);
-
     }
 
     /**
@@ -43,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void startColor(View view) {
+        //logging for debugging
         Log.i(TAG, "Entered startColor in MainActivity");
 
         //set up an intent to move to ColorActivity
         Intent startColorIntent = new Intent(this, ColorActivity.class);
         startActivity(startColorIntent);
     }
-
 }

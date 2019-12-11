@@ -23,5 +23,4 @@ public class Shape implements GameItem {
 
     }
 
-
 }

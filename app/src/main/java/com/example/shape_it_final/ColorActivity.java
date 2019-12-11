@@ -11,30 +11,37 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * This is the activity that plays colors.
+ *
+ *
+ */
 public class ColorActivity extends AppCompatActivity {
     //for logging and debugging
-    String TAG = "SHAPEIT ColorActivity";
+    private String TAG = "SHAPEIT ColorActivity";
 
     //Global declarations to manipulate textView and imageButton
-    TextView colorName;
-    ImageButton colorButton;
+    private TextView colorName;
+    private ImageButton colorButton;
 
     //Global declarations to manipulate gameItem and shapeFactory
-    GameItem gameItem;
-    ColorFactory colorFactory;
+    private GameItem gameItem;
+    private ColorFactory colorFactory;
 
+    //Holds the amount of time that passes between clicks
     private long clickTime = 0;
 
+    //begins our activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //just logging for debugging
         Log.i(TAG, "Started ColorActivity");
 
-        //getting started
+        //setting up our activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color);
 
-        //sets up the variables of the Button and the Name text field
+        //initiates and sets our button and text
         colorButton = findViewById(R.id.colorButton);
         colorName = findViewById(R.id.textView3);
 
@@ -50,7 +57,7 @@ public class ColorActivity extends AppCompatActivity {
         //logging for debugging
         Log.i(TAG, "Got a game item " + gameItem);
 
-        //calling the draw function to start our first shape
+        //calling the draw function to show our first color
         gameItem.draw();
 
         //Playing the auditory instructions
@@ -61,40 +68,35 @@ public class ColorActivity extends AppCompatActivity {
         colorButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                //
+                //if not enough time has passed, then return out of the click
                 if (SystemClock.elapsedRealtime() - clickTime < 3000){
                     return;
                 }
-                //
+                //Just adds up the passed time each click
                 clickTime = SystemClock.elapsedRealtime();
 
-                //shows the name above the shape image and starts the sound file
-                //1
+                //shows the name above the color image and starts the sound file
                 gameItem.showsName();
-                //2
                 gameItem.saysName(getApplicationContext());
 
-                //begins a pause to allow for sound to play before updating shape
+                //begins a pause to allow for sound to play before updating color
                 Runnable r = new Runnable() {
                     @Override
                     public void run(){
 
                         //After 3 seconds, our shape will update and we will move to the next
-                        //gameItem
-                        //4
                         gameItem = colorFactory.getColor(colorButton, colorName);
                         if (gameItem != null) {
-                            gameItem.clearName();
-                            gameItem.draw();
+                            gameItem.clearName();  //clears text
+                            gameItem.draw();       //draws next color
                         }
                     }
                 };
 
-                //3 helps handled the delay
+                //handles the delay
                 Handler h = new Handler();
                 h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
             }
         });
     }
-
 }
