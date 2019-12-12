@@ -1,15 +1,19 @@
 package com.example.shape_it_final;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.github.jinatonic.confetti.CommonConfetti;
 
 
 public class ShapeActivity extends AppCompatActivity {
@@ -79,6 +83,8 @@ public class ShapeActivity extends AppCompatActivity {
                 //2
                 gameItem.saysName(getApplicationContext());
 
+                CommonConfetti.rainingConfetti((ViewGroup)findViewById(R.id.shape).getParent(), new int[] { Color.RED })
+                        .oneShot();
                 //begins a pause to allow for sound to play before updating shape
                 Runnable r = new Runnable() {
                     @Override
