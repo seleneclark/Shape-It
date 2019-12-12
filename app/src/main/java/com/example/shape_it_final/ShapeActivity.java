@@ -83,7 +83,8 @@ public class ShapeActivity extends AppCompatActivity {
                 //2
                 gameItem.saysName(getApplicationContext());
 
-                CommonConfetti.rainingConfetti((ViewGroup)findViewById(R.id.shape).getParent(), new int[] { Color.RED })
+                int[] confettiColors = new int[] { Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.WHITE };
+                CommonConfetti.rainingConfetti((ViewGroup)findViewById(R.id.shape).getParent(), confettiColors)
                         .oneShot();
                 //begins a pause to allow for sound to play before updating shape
                 Runnable r = new Runnable() {
