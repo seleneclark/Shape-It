@@ -23,6 +23,7 @@ import android.widget.TextView;
  */
 public class Star implements GameItem {
 
+    //class variables
     private String TAG = "SHAPEIT Star";
     private ImageButton starButton;
     private TextView starName;
@@ -40,24 +41,37 @@ public class Star implements GameItem {
         starName = shapeName;
     }
 
+    /**
+     * draw()
+     * sets button to image
+     */
     @Override
     public void draw() {
         starButton.setImageResource(R.drawable.star);
         Log.i(TAG, "Drew a Square");
     }
 
+    /**
+     * showsName()
+     * sets text to name of gameItem
+     */
     @Override
     public void showsName() {
         starName.setText("Star");
         Log.i(TAG, "Shows the Star Name");
     }
 
+    /**
+     * saysName()
+     * uses media player to play sound file
+     */
     @Override
     public void saysName(Context context) {
-        //this needs changed to Star audio
+
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.star);
         mediaPlayer.start();
 
+        //releases the media player after a delay
         Runnable r = new Runnable() {
             @Override
             public void run(){
@@ -65,13 +79,17 @@ public class Star implements GameItem {
             }
         };
 
-        //3 helps handled the delay
+        // helps handled the delay
         Handler h = new Handler();
         h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
 
         Log.i(TAG, "Played the sound of the name of the Star");
     }
 
+    /**
+     * clearName()
+     * reset text to an empty string for next gameItem
+     */
     @Override
     public void clearName() {
         starName.setText("");

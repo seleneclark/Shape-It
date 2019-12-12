@@ -23,6 +23,7 @@ import android.widget.TextView;
  */
 public class Triangle implements GameItem {
 
+    //class variables
     private String TAG = "SHAPEIT Triangle";
     private ImageButton triangleButton;
     private TextView triangleName;
@@ -40,24 +41,37 @@ public class Triangle implements GameItem {
         triangleName = shapeName;
     }
 
+    /**
+     * draw()
+     * sets button to image
+     */
     @Override
     public void draw() {
         triangleButton.setImageResource(R.drawable.triangle);
         Log.i(TAG, "Drew a Triangle");
     }
 
+    /**
+     * showsName()
+     * sets text to name of gameItem
+     */
     @Override
     public void showsName() {
         triangleName.setText("Triangle");
         Log.i(TAG, "Shows the Triangle Name");
     }
 
+    /**
+     * saysName()
+     * uses media player to play sound file
+     */
     @Override
     public void saysName(Context context) {
 
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.triangle);
         mediaPlayer.start();
 
+        //releases the media player after a delay
         Runnable r = new Runnable() {
             @Override
             public void run(){
@@ -73,6 +87,10 @@ public class Triangle implements GameItem {
         Log.i(TAG, "Played the sound of the name of the triangle");
     }
 
+    /**
+     * clearName()
+     * reset text to an empty string for next gameItem
+     */
     @Override
     public void clearName() {
 

@@ -22,6 +22,7 @@ import android.widget.TextView;
  */
 public class Circle implements GameItem {
 
+    //class variables
     private String TAG = "SHAPEIT Circle";
     private ImageButton circleButton;
     private TextView circleName;
@@ -40,12 +41,20 @@ public class Circle implements GameItem {
         circleName = shapeName;
     }
 
+    /**
+     * draw()
+     * sets button to image
+     */
     @Override
     public void draw() {
         circleButton.setImageResource(R.drawable.circle);
         Log.i(TAG, "Drew a Circle");
     }
 
+    /**
+     * showsName()
+     * sets text to name of gameItem
+     */
     @Override
     public void showsName() {
 
@@ -54,12 +63,17 @@ public class Circle implements GameItem {
 
     }
 
+    /**
+     * saysName()
+     * uses media player to play sound file
+     */
     @Override
     public void saysName(Context context) {
         //this needs changed to circle audio
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.circle);
         mediaPlayer.start();
 
+        //releases the media player after a delay
         Runnable r = new Runnable() {
             @Override
             public void run(){
@@ -67,7 +81,7 @@ public class Circle implements GameItem {
             }
         };
 
-        //3 helps handled the delay
+        // helps handled the delay
         Handler h = new Handler();
         h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
 
@@ -75,6 +89,10 @@ public class Circle implements GameItem {
 
     }
 
+    /**
+     * clearName()
+     * reset text to an empty string for next gameItem
+     */
     @Override
     public void clearName() {
 

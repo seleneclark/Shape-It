@@ -53,7 +53,7 @@ public class Blue implements GameItem {
 
     /**
      * showsName()
-     * sets text to blue
+     * sets text to name of gameItem
      */
     @Override
     public void showsName() {

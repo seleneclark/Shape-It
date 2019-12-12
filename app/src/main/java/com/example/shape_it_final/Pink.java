@@ -23,6 +23,7 @@ import android.widget.TextView;
  */
 public class Pink implements GameItem {
 
+    //class variables
     private String TAG = "SHAPEIT Pink";
     private ImageButton pinkButton;
     private TextView pinkName;
@@ -40,24 +41,37 @@ public class Pink implements GameItem {
         pinkName = colorName;
     }
 
+    /**
+     * draw()
+     * sets button to image
+     */
     @Override
     public void draw() {
         pinkButton.setImageResource(R.drawable.pink);
         Log.i(TAG, "Drew a pink color");
     }
 
+    /**
+     * showsName()
+     * sets text to name of gameItem
+     */
     @Override
     public void showsName() {
         pinkName.setText("Pink");
         Log.i(TAG, "Shows the Pink Name");
     }
 
+    /**
+     * saysName()
+     * uses media player to play sound file
+     */
     @Override
     public void saysName(Context context) {
-        //this needs changed to Pink audio
+
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.pink);
         mediaPlayer.start();
 
+        //releases the media player after a delay
         Runnable r = new Runnable() {
             @Override
             public void run(){
@@ -65,13 +79,17 @@ public class Pink implements GameItem {
             }
         };
 
-        //3 helps handled the delay
+        // helps handled the delay
         Handler h = new Handler();
         h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
 
         Log.i(TAG, "Played the sound of the name of the Pink");
     }
 
+    /**
+     * clearName()
+     * reset text to an empty string for next gameItem
+     */
     @Override
     public void clearName() {
         pinkName.setText("");

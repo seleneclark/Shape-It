@@ -23,6 +23,7 @@ import android.widget.TextView;
  */
 public class Oval implements GameItem {
 
+    //class variables
     private String TAG = "SHAPEIT Oval";
     private ImageButton ovalButton;
     private TextView ovalName;
@@ -40,24 +41,37 @@ public class Oval implements GameItem {
         ovalName = shapeName;
     }
 
+    /**
+     * draw()
+     * sets button to image
+     */
     @Override
     public void draw() {
         ovalButton.setImageResource(R.drawable.oval);
         Log.i(TAG, "Drew an Oval");
     }
 
+    /**
+     * showsName()
+     * sets text to name of gameItem
+     */
     @Override
     public void showsName() {
         ovalName.setText("Oval");
         Log.i(TAG, "Shows the Oval Name");
     }
 
+    /**
+     * saysName()
+     * uses media player to play sound file
+     */
     @Override
     public void saysName(Context context) {
         //this needs changed to Oval audio
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.oval);
         mediaPlayer.start();
 
+        //releases the media player after a delay
         Runnable r = new Runnable() {
             @Override
             public void run(){
@@ -65,13 +79,17 @@ public class Oval implements GameItem {
             }
         };
 
-        //3 helps handled the delay
+        // helps handled the delay
         Handler h = new Handler();
         h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
 
         Log.i(TAG, "Played the sound of the name of the Oval");
     }
 
+    /**
+     * clearName()
+     * reset text to an empty string for next gameItem
+     */
     @Override
     public void clearName() {
         ovalName.setText("");

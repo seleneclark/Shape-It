@@ -23,6 +23,7 @@ import android.widget.TextView;
  */
 public class Square implements GameItem {
 
+    //class variables
     private String TAG = "SHAPEIT Square";
     private ImageButton squareButton;
     private TextView squareName;
@@ -40,24 +41,37 @@ public class Square implements GameItem {
         squareName = shapeName;
     }
 
+    /**
+     * draw()
+     * sets button to image
+     */
     @Override
     public void draw() {
         squareButton.setImageResource(R.drawable.square);
         Log.i(TAG, "Drew a Square");
     }
 
+    /**
+     * showsName()
+     * sets text to name of gameItem
+     */
     @Override
     public void showsName() {
         squareName.setText("Square");
         Log.i(TAG, "Shows the Square Name");
     }
 
+    /**
+     * saysName()
+     * uses media player to play sound file
+     */
     @Override
     public void saysName(Context context) {
-        //this needs changed to Square audio
+
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.square);
         mediaPlayer.start();
 
+        //releases the media player after a delay
         Runnable r = new Runnable() {
             @Override
             public void run(){
@@ -65,13 +79,17 @@ public class Square implements GameItem {
             }
         };
 
-        //3 helps handled the delay
+        // helps handled the delay
         Handler h = new Handler();
         h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
 
         Log.i(TAG, "Played the sound of the name of the Square");
     }
 
+    /**
+     * clearName()
+     * reset text to an empty string for next gameItem
+     */
     @Override
     public void clearName() {
         squareName.setText("");

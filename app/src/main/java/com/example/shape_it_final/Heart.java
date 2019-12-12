@@ -22,6 +22,7 @@ import android.widget.TextView;
  */
 public class Heart implements GameItem {
 
+    //class variables
     private String TAG = "SHAPEIT Heart";
     private ImageButton heartButton;
     private TextView heartName;
@@ -39,12 +40,20 @@ public class Heart implements GameItem {
         heartName = shapeName;
     }
 
+    /**
+     * draw()
+     * sets button to image
+     */
     @Override
     public void draw() {
         heartButton.setImageResource(R.drawable.heart);
         Log.i(TAG, "Drew a Heart");
     }
 
+    /**
+     * showsName()
+     * sets text to name of gameItem
+     */
     @Override
     public void showsName() {
         heartName.setText("Heart");
@@ -52,13 +61,17 @@ public class Heart implements GameItem {
         Log.i(TAG, "Shows the Heart Name");
     }
 
-    //plays the sound of a given shape, finding the context was difficult, not sure if right
+    /**
+     * saysName()
+     * uses media player to play sound file
+     */
     @Override
     public void saysName(Context context) {
-        //this needs changed to Star audio
+
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.heart);
         mediaPlayer.start();
 
+        //releases the media player after a delay
         Runnable r = new Runnable() {
             @Override
             public void run(){
@@ -66,13 +79,17 @@ public class Heart implements GameItem {
             }
         };
 
-        //3 helps handled the delay
+        // helps handled the delay
         Handler h = new Handler();
         h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
 
         Log.i(TAG, "Played the sound of the name of the heart");
     }
 
+    /**
+     * clearName()
+     * reset text to an empty string for next gameItem
+     */
     @Override
     public void clearName() {
 

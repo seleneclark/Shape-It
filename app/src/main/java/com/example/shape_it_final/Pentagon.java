@@ -23,6 +23,7 @@ import android.widget.TextView;
  */
 public class Pentagon implements GameItem {
 
+    //class variables
     private String TAG = "SHAPEIT Pentagon";
     private ImageButton pentagonButton;
     private TextView pentagonName;
@@ -40,24 +41,37 @@ public class Pentagon implements GameItem {
         pentagonName = shapeName;
     }
 
+    /**
+     * draw()
+     * sets button to image
+     */
     @Override
     public void draw() {
         pentagonButton.setImageResource(R.drawable.pentagon);
         Log.i(TAG, "Drew a Pentagon");
     }
 
+    /**
+     * showsName()
+     * sets text to name of gameItem
+     */
     @Override
     public void showsName() {
         pentagonName.setText("Pentagon");
         Log.i(TAG, "Shows the Pentagon Name");
     }
 
+    /**
+     * saysName()
+     * uses media player to play sound file
+     */
     @Override
     public void saysName(Context context) {
         //this needs changed to Pentagon audio
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.pentagon);
         mediaPlayer.start();
 
+        //releases the media player after a delay
         Runnable r = new Runnable() {
             @Override
             public void run(){
@@ -65,13 +79,17 @@ public class Pentagon implements GameItem {
             }
         };
 
-        //3 helps handled the delay
+        // helps handled the delay
         Handler h = new Handler();
         h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
 
         Log.i(TAG, "Played the sound of the name of the Pentagon");
     }
 
+    /**
+     * clearName()
+     * reset text to an empty string for next gameItem
+     */
     @Override
     public void clearName() {
         pentagonName.setText("");

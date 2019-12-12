@@ -22,6 +22,7 @@ import android.widget.TextView;
  */
 public class Rectangle implements GameItem {
 
+    //class variables
     private String TAG = "SHAPEIT Rectangle";
     private ImageButton rectangleButton;
     private TextView rectangleName;
@@ -39,12 +40,20 @@ public class Rectangle implements GameItem {
         rectangleName = shapeName;
     }
 
+    /**
+     * draw()
+     * sets button to image
+     */
     @Override
     public void draw() {
         rectangleButton.setImageResource(R.drawable.rectangle);
         Log.i(TAG, "Drew a Rectangle");
     }
 
+    /**
+     * showsName()
+     * sets text to name of gameItem
+     */
     @Override
     public void showsName() {
         rectangleName.setText("Rectangle");
@@ -52,13 +61,17 @@ public class Rectangle implements GameItem {
         Log.i(TAG, "Shows the Rectangle Name");
     }
 
-    //plays the sound of a given shape, finding the context was difficult, not sure if right
+    /**
+     * saysName()
+     * uses media player to play sound file
+     */
     @Override
     public void saysName(Context context) {
 
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.rectangle);
         mediaPlayer.start();
 
+        //releases the media player after a delay
         Runnable r = new Runnable() {
             @Override
             public void run(){
@@ -66,13 +79,17 @@ public class Rectangle implements GameItem {
             }
         };
 
-        //3 helps handled the delay
+        // helps handled the delay
         Handler h = new Handler();
         h.postDelayed(r, 3000); // <-- the "3000" is the delay time in milliseconds.
 
         Log.i(TAG, "Played the sound of the name of the rectangle");
     }
 
+    /**
+     * clearName()
+     * reset text to an empty string for next gameItem
+     */
     @Override
     public void clearName() {
 
