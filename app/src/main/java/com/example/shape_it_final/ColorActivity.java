@@ -1,15 +1,19 @@
 package com.example.shape_it_final;
 
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.github.jinatonic.confetti.CommonConfetti;
 
 /**
  * This is the activity that plays the Color Game
@@ -89,6 +93,11 @@ public class ColorActivity extends AppCompatActivity {
                 //shows the name above the color image and starts the sound file
                 gameItem.showsName();
                 gameItem.saysName(getApplicationContext());
+
+                //Confetti briefly rains from the top of the screen
+                int[] confettiColors = new int[] { Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.WHITE };
+                CommonConfetti.rainingConfetti((ViewGroup)findViewById(R.id.color).getParent(), confettiColors)
+                        .oneShot();
 
                 //begins a pause to allow for sound to play before updating color
                 Runnable r = new Runnable() {
