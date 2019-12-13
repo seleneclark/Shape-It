@@ -16,12 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.github.jinatonic.confetti.CommonConfetti;
 
 /**
- * This is the activity that plays the shapes
+ * This is the activity that plays the Shapes Game
  *
- *
+ * A shape appears on the screen.  When the shape
+ * is touched, it says its name and the name of the shape appears
+ * on the screen.  In addition,  confetti rains from the top of
+ * the screen in celebration.
  */
-
-
 public class ShapeActivity extends AppCompatActivity {
 
     //for logging and debugging
@@ -38,7 +39,15 @@ public class ShapeActivity extends AppCompatActivity {
     //Holds the amount of time that passes between clicks
     private long clickTime = 0;
 
-    //This begins our activity
+    /**
+     * This method runs the Shape Game
+     *
+     * The game functionality runs through this method.  A shape is
+     * created here and all the methods to draw, say the name of the
+     * shape, and show the name of the shape are called.
+     *
+     * @param savedInstanceState The Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //for logging and debugging

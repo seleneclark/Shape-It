@@ -10,14 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 /**
  * This is the starting activity of the game.
  *
- *
+ * This Activity launches the game play of ShapeIt.  Here the user
+ * may read the instructions and then choose to play the Shapes game
+ * or the Colors Game by pressing the indicated buttons.
  */
 public class MainActivity extends AppCompatActivity {
 
     //for debugging
     private static final String TAG = "SHAPEIT MainActivity";
 
-    //starts our main activity
+    /**
+     * This method starts our main activity
+     *
+     * @param savedInstanceState The Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * When the "Shapes" button is pressed in the MainActivity, this method is called
      * and the Shapes game is started.
-     * @param view
+     * @param view The View on the screen
      */
     public void startShape(View view) {
         //logging for debugging
@@ -41,8 +47,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     *This method starts the Color Activity Game
      *
-     * @param view
+     * When the "Colors" button is pressed in the MainActivity, this method is called
+     * and the Colors game is started.
+     * @param view The View on the screen
      */
     public void startColor(View view) {
         //logging for debugging

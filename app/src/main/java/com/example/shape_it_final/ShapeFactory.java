@@ -5,12 +5,27 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+/**
+ * This is a factory that creates the shapes for the Shape Game
+ *
+ * This factory will randomly create a shape when it is called.  It can can create a
+ * Triangle, Circle, Square, Rectangle, Star, Oval, Heart, or Pentagon.
+ */
 public class ShapeFactory {
 
     //this holds a value to prevent the same shape from showing up twice in a row
     int previousNumber;
 
-    //This function randomly generates a shape to send to ShapeActivity
+    /**
+     * This method randomly generates a shape to send to ShapeActivity
+     *
+     * This factory will randomly create a shape when it is called.  It can can create a
+     * Triangle, Circle, Square, Rectangle, Star, Oval, Heart, or Pentagon.
+     *
+     * @param shapeButton The button where the shape images appear
+     * @param shapeName The TextView where the name of the color appears
+     * @return GameItem
+     */
     public GameItem getShape(ImageButton shapeButton, TextView shapeName) {
         int numberGameItems = 8;
         Random random = new Random();

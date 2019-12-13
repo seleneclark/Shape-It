@@ -12,9 +12,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * This is the activity that plays colors.
+ * This is the activity that plays the Color Game
  *
- *
+ * A color appears  on the screen.  When the color
+ * is touched, it says its name and the name of the color appears
+ * on the screen.  In addition,  confetti rains from the top of
+ * the screen in celebration.
  */
 public class ColorActivity extends AppCompatActivity {
     //for logging and debugging
@@ -31,7 +34,15 @@ public class ColorActivity extends AppCompatActivity {
     //Holds the amount of time that passes between clicks
     private long clickTime = 0;
 
-    //begins our activity
+    /**
+     * This method runs the Color Game
+     *
+     * The game functionality runs through this method.  A color is
+     * created here and all the methods to draw, say the name of the
+     * color, and show the name of the color are called.
+     *
+     * @param savedInstanceState The Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //just logging for debugging
