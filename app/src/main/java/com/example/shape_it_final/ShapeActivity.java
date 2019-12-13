@@ -2,21 +2,26 @@ package com.example.shape_it_final;
 
 
 import android.media.MediaPlayer;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.github.jinatonic.confetti.CommonConfetti;
 
 /**
  * This is the activity that plays the shapes
  *
  *
  */
+
+
 public class ShapeActivity extends AppCompatActivity {
 
     //for logging and debugging
@@ -81,6 +86,9 @@ public class ShapeActivity extends AppCompatActivity {
                 gameItem.showsName();
                 gameItem.saysName(getApplicationContext());
 
+                int[] confettiColors = new int[] { Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.WHITE };
+                CommonConfetti.rainingConfetti((ViewGroup)findViewById(R.id.shape).getParent(), confettiColors)
+                        .oneShot();
                 //begins a pause to allow for sound to play before updating shape
                 Runnable r = new Runnable() {
                     @Override
