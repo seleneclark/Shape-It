@@ -28,14 +28,20 @@ public class ColorFactory {
      * @return GameItem
      */
     public GameItem getColor(ImageButton colorButton, TextView colorName) {
+
+        //how many game items we have to work with
         int numberGameItems = 7;
+
+        //random number generator
         Random random = new Random();
         int randomNumber = random.nextInt(numberGameItems);
 
+        //this prevents the same game item from spawned twice in a row
         while (randomNumber == previousNumber) {
             randomNumber = random.nextInt(numberGameItems);
         }
 
+        //this switch decides which gameItem to return based on int value
         switch (randomNumber) {
             case 0:
                 previousNumber = 0;
