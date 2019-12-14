@@ -8,7 +8,7 @@ import android.content.Context;
  *
  * GameItems for ShapeActivity:  Triangle, Square, Circle, Heart, Oval, Pentagon,
  * Rectangle, & Star.  GameItems for ColorActivity: Blue, Green,  Orange,  Pink,
- * Purple, Red & Yellow. Its methods are: draw(), showsName(), saysName(), and clearName()
+ * Purple, Red & Yellow. Its methods are: draw(), showName(), sayName(), and clearName()
  */
 public interface GameItem {
     /**
@@ -18,11 +18,11 @@ public interface GameItem {
     /**
      * Makes the name of the GameItem appear
      * */
-    void showsName();
+    void showName();
     /**
      * Says the name of the GameItem
      * */
-    void saysName(Context context);
+    void sayName(Context context);
     /**
      * Clears the name from the screen
      */

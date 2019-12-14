@@ -91,8 +91,8 @@ public class ShapeActivity extends AppCompatActivity {
                 clickTime = SystemClock.elapsedRealtime();
 
                 //shows the name above the shape image and starts the sound file
-                gameItem.showsName();
-                gameItem.saysName(getApplicationContext());
+                gameItem.showName();
+                gameItem.sayName(getApplicationContext());
 
                 //Confetti briefly rains from the top of the screen
                 int[] confettiColors = new int[] { Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE, Color.WHITE };

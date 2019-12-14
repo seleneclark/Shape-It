@@ -12,7 +12,7 @@ import android.widget.TextView;
  *
  * When touched it will then show its name and say its name.  It
  * implements the GameItem Interface.  Its methods are: draw(),
- * showsName(), saysName(), and clearName().
+ * showName(), sayName(), and clearName().
  */
 public class Star implements GameItem {
 
@@ -45,21 +45,21 @@ public class Star implements GameItem {
     }
 
     /**
-     * showsName()
+     * showName()
      * sets text to name of gameItem
      */
     @Override
-    public void showsName() {
+    public void showName() {
         starName.setText("Star");
         Log.i(TAG, "Shows the Star Name");
     }
 
     /**
-     * saysName()
+     * sayName()
      * uses media player to play sound file
      */
     @Override
-    public void saysName(Context context) {
+    public void sayName(Context context) {
 
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.star);
         mediaPlayer.start();

@@ -11,7 +11,7 @@ import android.widget.TextView;
  *
  * When touched it will then show its name and say its name.  It
  * implements the GameItem Interface.  Its methods are: draw(),
- * showsName(), saysName(), and clearName().
+ * showName(), sayName(), and clearName().
  */
 public class Circle implements GameItem {
 
@@ -45,11 +45,11 @@ public class Circle implements GameItem {
     }
 
     /**
-     * showsName()
+     * showName()
      * sets text to name of gameItem
      */
     @Override
-    public void showsName() {
+    public void showName() {
 
         circleName.setText("Circle");
         Log.i(TAG, "Shows the Circle Name");
@@ -57,11 +57,11 @@ public class Circle implements GameItem {
     }
 
     /**
-     * saysName()
+     * sayName()
      * uses media player to play sound file
      */
     @Override
-    public void saysName(Context context) {
+    public void sayName(Context context) {
         //this needs changed to circle audio
         final MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.circle);
         mediaPlayer.start();
