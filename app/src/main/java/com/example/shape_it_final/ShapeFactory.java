@@ -6,7 +6,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 /**
- * This is a factory that creates the shapes for the Shape Game
+ * This is a factory that creates the shapes for the Shape Game.
  *
  * This factory will randomly create a shape when it is called.  It can can create a
  * Triangle, Circle, Square, Rectangle, Star, Oval, Heart, or Pentagon.
@@ -17,7 +17,7 @@ public class ShapeFactory {
     int previousNumber;
 
     /**
-     * This method randomly generates a shape to send to ShapeActivity
+     * This method randomly generates a shape to send to ShapeActivity.
      *
      * This factory will randomly create a shape when it is called.  It can can create a
      * Triangle, Circle, Square, Rectangle, Star, Oval, Heart, or Pentagon.

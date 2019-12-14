@@ -7,18 +7,11 @@ import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 /**
- * Rectangle Class
+ * Rectangle is a type of GameItem that will appear in ShapeActivity.
  *
- * A Rectangle is a type of GameItem that will appear in ShapeActivity to
- * be touched where it will then show its name and say its name
- *
- * Implements the GameItem Interface
- *
- *Methods:
- *  draw() - Draw will draw the GameItem on the screen
- *  showsName() - will make the name of the GameItem appear
- *  saysName() - will say the name of the GameItem
- *  clearName() - will clear the name from the screen
+ * When touched it will then show its name and say its name.  It
+ * implements the GameItem Interface.  Its methods are: draw(),
+ * showsName(), saysName(), and clearName().
  */
 public class Rectangle implements GameItem {
 

@@ -14,6 +14,9 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
+/**
+ * Runs tests on ColorActivity
+ */
 public class ColorActivityTest {
 
     @Rule

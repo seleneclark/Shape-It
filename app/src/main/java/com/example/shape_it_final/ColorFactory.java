@@ -7,7 +7,7 @@ import java.util.Random;
 
 
 /**
- * This is a factory that creates the shapes for the Color Game
+ * This is a factory that creates the shapes for the Color Game.
  *
  * This factory will randomly create a color when it is called.  It can can create
  * Orange, Blue, Green, Pink, Purple, Red or Yellow.
@@ -17,7 +17,8 @@ public class ColorFactory {
     //this holds a value to prevent the same color from showing up twice in a row
     int previousNumber;
 
-    /**This function randomly generates a color to send to GameActivity
+    /**
+     * Randomly generates a color to send to GameActivity.
      *
      * This factory will randomly create a color when it is called.  It can can create
      * Orange, Blue, Green, Pink, Purple, Red or Yellow.

@@ -16,9 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.github.jinatonic.confetti.CommonConfetti;
 
 /**
- * This is the activity that plays the Color Game
+ * This is the activity that controls the Color Game.
  *
- * A color appears  on the screen.  When the color
+ * A color appears on the screen. When the color
  * is touched, it says its name and the name of the color appears
  * on the screen.  In addition,  confetti rains from the top of
  * the screen in celebration.
