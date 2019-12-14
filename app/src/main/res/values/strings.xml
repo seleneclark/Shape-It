@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Shape-It-Final</string>
-    <string name="welcomeMessage">Tap on the shape to reveal its name.  Repeat until your child has learned all of the shapes!</string>
+    <string name="welcomeMessage">Tap on the shape or color to reveal its name.  Repeat until you have learned them all!</string>
     <string name="title_activity_game">GameActivity</string>
 </resources>
