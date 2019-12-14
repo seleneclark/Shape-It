@@ -8,7 +8,7 @@
     tools:context=".ColorActivity">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewColor"
         android:layout_width="253dp"
         android:layout_height="64dp"
         android:layout_marginBottom="20dp"
@@ -18,12 +18,12 @@
         android:textStyle="bold"
         android:typeface="normal"
         app:fontFamily="casual"
-        app:layout_constraintBottom_toTopOf="@+id/colorButton"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/colorButton"
+        android:id="@+id/imageButtonColor"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:adjustViewBounds="true"

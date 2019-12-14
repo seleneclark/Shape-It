@@ -27,7 +27,7 @@ public class ColorActivity extends AppCompatActivity {
     //for logging and debugging
     private String TAG = "SHAPEIT ColorActivity";
 
-    //Global declarations to manipulate textView and imageButton
+    //Global declarations to manipulate textViewShape and imageButton
     private TextView colorName;
     private ImageButton colorButton;
 
@@ -57,8 +57,8 @@ public class ColorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_color);
 
         //initiates and sets our button and text
-        colorButton = findViewById(R.id.colorButton);
-        colorName = findViewById(R.id.textView3);
+        colorButton = findViewById(R.id.imageButtonColor);
+        colorName = findViewById(R.id.textViewColor);
 
         //logging for debugging
         Log.i(TAG, "Instantiate a colorFactory");

@@ -27,7 +27,7 @@ public class ShapeActivity extends AppCompatActivity {
     //for logging and debugging
     private String TAG = "SHAPEIT ShapeActivity";
 
-    //Global declarations to manipulate textView and imageButton
+    //Global declarations to manipulate textViewShape and imageButton
     private TextView shapeName;
     private ImageButton shapeButton;
 
@@ -57,8 +57,8 @@ public class ShapeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shape);
 
         //initiates and sets our button and text
-        shapeButton = findViewById(R.id.imageButton);
-        shapeName = findViewById(R.id.textView);
+        shapeButton = findViewById(R.id.imageButtonShape);
+        shapeName = findViewById(R.id.textViewShape);
 
         //logging for debugging
         Log.i(TAG, "Instantiate a shapeFactory");

@@ -8,7 +8,7 @@
     tools:context=".ShapeActivity">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButtonShape"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:adjustViewBounds="true"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.498" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewShape"
         android:layout_width="253dp"
         android:layout_height="64dp"
         android:layout_marginBottom="20dp"
@@ -32,7 +32,7 @@
         android:textStyle="bold"
         android:typeface="normal"
         app:fontFamily="casual"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonShape"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

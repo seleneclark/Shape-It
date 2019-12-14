@@ -41,7 +41,7 @@ public class ShapeActivityTest {
     }
     @Test
     public void test_visibility_ShapeItemOnTheScreen() {
-        onView(withId(R.id.imageButton)).check(matches(isDisplayed()));
+        onView(withId(R.id.imageButtonShape)).check(matches(isDisplayed()));
     }
 
     @After

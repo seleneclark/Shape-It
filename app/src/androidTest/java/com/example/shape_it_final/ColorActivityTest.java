@@ -38,7 +38,7 @@ public class ColorActivityTest {
     }
     @Test
     public void test_visibility_ShapeItemOnTheScreen() {
-        onView(withId(R.id.colorButton)).check(matches(isDisplayed()));
+        onView(withId(R.id.imageButtonColor)).check(matches(isDisplayed()));
     }
     @After
     public void tearDown() throws Exception {
