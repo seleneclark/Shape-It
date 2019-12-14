@@ -79,9 +79,15 @@ public class ShapeActivity extends AppCompatActivity {
         final MediaPlayer mediaPlayer = MediaPlayer.create(ShapeActivity.this,R.raw.shape_intro);
         mediaPlayer.start();
 
+
+
         //This listens for a click on our shape
         shapeButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                //this release is in case the user touches the button before the intro finishes
+                //so sounds aren't playing over the top of one another
+                mediaPlayer.release();
 
                 //if not enough time has passed, then return out of the click
                 if (SystemClock.elapsedRealtime() - clickTime < 3000){
