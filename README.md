@@ -1,6 +1,7 @@
 # Shape-It
 
 Team Project for Android using Java<br>
+Designed with OOP Object Oriented Programming and Unit Testing.
 Shape-It is a learning app for children from the ages of 18-36 months<br>
 This game-centered app teaches shapes and colors with audio and visual representation of the shape and color.<br>
 
